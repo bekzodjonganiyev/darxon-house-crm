@@ -1,0 +1,22 @@
+.object {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+
+}
+
+.object-header {
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.object-body{
+    height: 90%;
+    padding: 30px 0px 200px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}

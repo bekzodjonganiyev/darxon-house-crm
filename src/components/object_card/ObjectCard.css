@@ -1,0 +1,29 @@
+.ant-card-body{
+    text-align: center !important;
+    font-size: 30px;
+}
+
+.object-card_link{
+    color: black;
+    text-transform: uppercase;
+}
+
+.icon{  
+    font-size: 20px !important;
+}
+
+.icon:hover{
+    transform: scale(1.2);
+}
+
+.info-icon{
+    color: limegreen !important ;
+}
+
+.edit-icon{
+    color: rgb(23, 114, 252) !important;
+}
+
+.delete-icon{
+    color: red !important;
+}

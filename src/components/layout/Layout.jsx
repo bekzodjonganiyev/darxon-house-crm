@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Header from "../header/Header";
 import Sidebar from "../sidebar/Sidebar";
 
 import "./Layout.css";
@@ -11,7 +12,10 @@ const Layout = () => {
         <Sidebar />
       </aside>
       <main>
-        <Outlet />
+        <Header />
+        <div className="main-app">
+          <Outlet />
+        </div>
       </main>
     </section>
   );
