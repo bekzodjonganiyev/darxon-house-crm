@@ -32,6 +32,7 @@ const Object = () => {
             <ObjectCard
               key={i}
               to={"a"}
+              defaultTitle={"Manzili"}
               title={"Example title"}
               objectName={"Object name"}
             />

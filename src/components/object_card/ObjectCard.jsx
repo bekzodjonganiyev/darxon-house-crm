@@ -9,7 +9,7 @@ import {
 
 import "./ObjectCard.css";
 
-const ObjectCard = ({ to, title, objectName }) => {
+const ObjectCard = ({ to, defaultTitle, title, objectName }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const showModal = () => {
     setIsModalOpen(true);
@@ -34,7 +34,7 @@ const ObjectCard = ({ to, title, objectName }) => {
         <p>Some contents...</p>
       </Modal>
       <Card
-        title={`Manzil: ${title}`}
+        title={`${defaultTitle}: ${title}`}
         style={{ width: "400px" }}
         actions={[
           <InfoCircleOutlined className="icon info-icon" onClick={showModal} />,
@@ -42,7 +42,7 @@ const ObjectCard = ({ to, title, objectName }) => {
           <DeleteOutlined className="icon delete-icon" onClick={showModal} />,
         ]}
       >
-        <Link to={to} className="object-card_link">
+        <Link to={`${to ? `object/${to}` : "#"}`} className="object-card_link">
           {objectName}
         </Link>
       </Card>

@@ -1,3 +1,7 @@
+h1 {
+  margin: 5px;
+}
+
 .type {
   display: flex;
   flex-direction: column;
@@ -10,15 +14,21 @@
   justify-content: space-between;
 }
 
-.type-body{
-    height: 90%;
-    padding: 30px 0px 200px 0px;
+.type-body {
+  height: 90%;
+  padding: 30px 0px 200px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
 }
 
-.download-icon,
-.print-icon,
-.upload-icon {
+.icon {
   font-size: 20px !important;
+  cursor: pointer;
+}
+
+.icon:hover {
+  transform: scale(1.2);
 }
 
 .download-icon {
