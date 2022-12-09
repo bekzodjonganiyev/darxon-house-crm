@@ -17,6 +17,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Object />} />
+        <Route path="/object/:id" element={<SingleObject />} />
         <Route path="/type" element={<Type />} />
         <Route path="/contract" element={<Contract />} />
         <Route path="/shartnoma-view" element={<ShartnomaView />} />
