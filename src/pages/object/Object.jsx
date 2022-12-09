@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { Button, Input, Space } from "antd";
 
 import "./Object.css";
@@ -22,9 +23,11 @@ const Object = () => {
             size="large"
             onSearch={onSearch}
           />
-          <Button type="primary" size="large">
-            Obyekt qo'shish
-          </Button>
+          <Link to="/create-object">
+            <Button type="primary" size="large">
+              Obyekt qo'shish
+            </Button>
+          </Link>
         </Space>
 
         <Space className="object-body">

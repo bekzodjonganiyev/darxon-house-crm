@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button, Space, Table, Input } from "antd";
 import {
   DownloadOutlined,
@@ -111,9 +112,11 @@ const Contract = () => {
             size="large"
             onSearch={onSearch}
           />
-          <Button type="primary" size="large">
-            Shartnoma qilish
-          </Button>
+          <Link to="/shartnoma-view">
+            <Button type="primary" size="large">
+              Shartnoma qilish
+            </Button>
+          </Link>
         </Space>
 
         <Table

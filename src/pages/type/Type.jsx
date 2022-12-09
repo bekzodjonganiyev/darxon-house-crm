@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import { Button, Space, Input } from "antd";
 
 import "./Type.css";
@@ -22,10 +23,12 @@ const Type = () => {
             size="large"
             onSearch={onSearch}
           />
-          <Button type="primary" size="large">
-            Tip qo'shish
-          </Button>
-        </Space> 
+          <Link to="/type-object">
+            <Button type="primary" size="large">
+              Tip qo'shish
+            </Button>
+          </Link>
+        </Space>
 
         <Space className="type-body">
           {a.map((i) => (
@@ -37,7 +40,6 @@ const Type = () => {
             />
           ))}
         </Space>
-
       </div>
     </>
   );
