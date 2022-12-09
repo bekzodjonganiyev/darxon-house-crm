@@ -1,7 +1,7 @@
 import {http} from "../utils/http"
 
 const typeAPI = {
-    getType(perPage, page ) {
+    getType( ) {
         return http.get(`/tip`)
     },
 
@@ -10,103 +10,103 @@ const typeAPI = {
     },
 
     addType(body) {
-        return http.post(`/tip`, body)
+        return http.post(`/tip`, {body})
     },
 
-    editType(body) {
-        return http.put(`/tip`, body)
+    editType(body, id) {
+        return http.put(`/tip/${id}`, body)
     },
 
     deleteType(id) {
-        return http.delete(`/tip${id}`)
+        return http.delete(`/tip/${id}`)
     }
 }
 
 const objectAPI = {
     getObject() {
-        return http.get("")
+        return http.get(`/object`)
     },
 
-    getObjectById() {
-        return http.get("")
+    getObjectById(id) {
+        return http.get(`/object/${id}`)
     },
 
-    addObject() {
-        return http.post("")
+    addObject(body) {
+        return http.post(`/object`, body)
     },
 
-    editObject() {
-        return http.put("")
+    editObject(body, id) {
+        return http.put(`/object/${id}`, body)
     },
 
-    deleteObject() {
-        return http.delete("")
+    deleteObject(id) {
+        return http.delete(`/object/${id}`)
     }
 }
 
 const houseAPI = {
     getObject() {
-        return http.get("")
+        return http.get(`/dom`)
     },
 
-    getObjectById() {
-        return http.get("")
+    getObjectById(id) {
+        return http.get(`/dom/${id}`)
     },
 
-    addObject() {
-        return http.post("")
+    addObject(body) {
+        return http.post(`/dom`, body)
     },
 
-    editObject() {
-        return http.put("")
+    editObject(body, id) {
+        return http.put(`/dom/${id}`, body)
     },
 
-    deleteObject() {
-        return http.delete("")
+    deleteObject(id) {
+        return http.delete(`/dom/${id}`)
     }
 }
 
 const homeAPI = {
     getHome() {
-        return http.get("")
+        return http.get(`/flat`)
     },
 
-    getHomeById() {
-        return http.get("")
+    getHomeById(id) {
+        return http.get(`/flat/${id}`)
     },
 
-    addHome() {
-        return http.post("")
+    addHome(body) {
+        return http.post(`/flat`, body)
     },
 
-    editHome() {
-        return http.put("")
+    editHome(body, id) {
+        return http.put(`/flat/${id}`, body)
     },
 
-    deleteHome() {
-        return http.delete("")
+    deleteHome(id) {
+        return http.delete(`/flat/${id}`)
     }
 }
 
 const contractAPI = {
     getContract() {
-        return http.get("")
+        return http.get(`/shartnoma`)
     },
 
-    getContractById() {
-        return http.get("")
+    getContractById(id) {
+        return http.get(`/shartnoma/${id}`)
     },
 
-    addContract() {
-        return http.post("")
+    addContract(body) {
+        return http.post(`/shartnoma`, body)
     },
 
-    editContract() {
-        return http.put("")
+    editContract(body, id) {
+        return http.put(`/shartnoma/${id}`, body)
     },
 
-    deleteContract() {
-        return http.delete("")
+    deleteContract(id) {
+        return http.delete(`/shartnoma/${id}`)
     }
 }
 
