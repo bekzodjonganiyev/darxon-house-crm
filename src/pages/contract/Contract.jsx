@@ -11,7 +11,6 @@ import "./Contract.css";
 const Contract = () => {
   const { Search } = Input;
   const onSearch = (value) => console.log(value);
-  const a = [1, 2, 34, 4, 5, 6, 342, 4, 5, 6, 76];
 
   const columns = [
     {

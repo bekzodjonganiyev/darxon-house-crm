@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Space, Table, Input } from "antd";
+import { Button, Space, Input } from "antd";
 
 import "./Type.css";
 

@@ -1,4 +1,4 @@
-// import { configureStore } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 
 import typeSlice from "../utils/slices/typeSlice";
 import objectSlice from "../utils/slices/objectSlice";
