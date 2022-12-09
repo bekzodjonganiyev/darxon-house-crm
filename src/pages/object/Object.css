@@ -19,3 +19,11 @@
     flex-wrap: wrap;
     overflow-y: scroll;
 }
+.obyekt__info{
+    display: flex;
+    justify-content: center;
+    color: blue;
+}
+.obyekt__btn{
+    margin: 20px 5px;
+}
