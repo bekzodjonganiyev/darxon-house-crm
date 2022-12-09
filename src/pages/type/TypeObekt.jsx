@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Input, Checkbox, Button } from "antd";
+import { Form, Input, Button } from "antd";
 import Upload from "antd/es/upload/Upload";
 const TypeObekt = () => {
   return (
