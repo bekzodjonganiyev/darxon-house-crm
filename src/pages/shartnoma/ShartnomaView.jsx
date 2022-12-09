@@ -275,6 +275,7 @@ const ShartnomaView = () => {
       <div className="row">
         <div className="shartnoma__info">
           <h3>Shartnoma tuzish</h3>
+          <hr/>
         </div>
         <Form onSubmit>
           <div className="NameInfo">

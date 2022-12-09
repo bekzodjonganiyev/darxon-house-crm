@@ -6,3 +6,16 @@
     gap: 2px;
   
 }
+.shartnoma__info h3{
+    display:flex;
+justify-content: center;
+color: #1890ff;
+    text-shadow: 0 0 .25px currentcolor;
+    font-weight: 400;
+}
+.shartnoma__info hr{
+    font-size: 10px;
+    border: 2px;
+        opacity: 1;
+        color:#187ddb;
+}
