@@ -1,0 +1,12 @@
+header{
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+}
+
+li{
+
+}

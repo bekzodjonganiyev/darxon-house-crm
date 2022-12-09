@@ -1,27 +1,27 @@
-aside{
-    width: 20%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding: 10px 30px;
-    background: rgb(11, 17, 31);
+aside {
+  width: 15%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0;
+  background: rgb(11, 17, 31);
 }
 
-.link{
-    width: 100%;
-    text-decoration: none;
-    text-align: left;
-    font-size: 20px;
-    color: white;
-    padding: 10px 20px;
-    box-sizing: border-box;
+.link {
+  width: 100%;
+  text-decoration: none;
+  text-align: left;
+  font-size: 20px;
+  color: white;
+  padding: 14px 20px;
+  box-sizing: border-box;
 }
 
-.link:hover{
-    background: rgb(193, 193, 193);
+.link:hover {
+  background: rgb(0, 140, 255);
 }
 
-.active{
-    background: rgb(193, 193, 193);
+.active {
+  background: rgb(0, 140, 255);
 }
