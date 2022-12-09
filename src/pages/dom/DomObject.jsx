@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form, Input, Checkbox, Button, Select } from "antd";
+import { Form, Input, Select } from "antd";
 const DomObject = () => {
     const selectDom = [
       { value: "1", label: "1-4 qavat" },

@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React from "react";
 import {CloudUploadOutlined } from "@ant-design/icons";
 import '../type/Type.css'
-import { Col, Row, Form, Input, Button, Upload, InputNumber } from "antd";
+import {Row, Form, Input, Button, Upload, InputNumber } from "antd";
 const TypeObekt = () => {
    const onFinish = (values) => {
      console.log("Success:", values);
