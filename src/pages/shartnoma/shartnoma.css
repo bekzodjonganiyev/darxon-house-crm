@@ -19,3 +19,16 @@
 .checout__btn button{
     margin: 14px 0;
 }
+.object__numbers {
+    width: 9vw;
+    padding: 5px;
+}
+.object__manzil, .form-control{
+    width: 18vw;
+        padding: 9px !important;
+}
+.shartnomaObject__info{
+    display: flex;
+        margin: 4rem auto;
+        justify-content: center;
+}

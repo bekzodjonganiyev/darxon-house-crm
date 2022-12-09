@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import { PatternFormat } from "react-number-format";
 
 
-import { Form, Input, Checkbox } from "antd";
+import { Form, Input, Button, Checkbox, InputNumber } from "antd";
 
 import Select from "react-select";
 import '../shartnoma/shartnoma.css'
 const ShartnomaView = () => {
+  const onFinish = (values) => {
+    console.log("Success:", values);
+  };
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
   const [mapDistrict, setMapDistrict] = useState([]);
   const selectRegion2 = [
     { value: "Toshkent viloyat", label: "Toshkent viloyat" },
@@ -271,51 +277,69 @@ const ShartnomaView = () => {
     },
   ];
   return (
-    <div className="container">
+    <div className="shartnomaObject__info">
       <div className="row">
         <div className="shartnoma__info">
           <h3>Shartnoma tuzish</h3>
           <hr />
         </div>
-        <Form onSubmit>
+        <Form
+          onSubmit
+          name="basic"
+          // ref={useRef}
+          autoComplete="off"
+          initialValues={{
+            remember: true,
+          }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          
+        >
           <div className="NameInfo">
-            <div className="col-4 p-1">
-              {" "}
-              <span className="form-label__text">Ism</span>
-              <br />
+            <Form.Item
+              label="Ism"
+              rules={[
+                {
+                  required: true,
+                  message: "Ismingizni kiriting",
+                },
+              ]}
+            >
               <Input
-                name="Name"
-                placeholder="ismingizni kiriting"
-                className="form-control"
-                required
+                className="object__manzil"
+                placeholder="Ismingizni kiriting"
               />
-            </div>
-
-            <div className="col-4 p-1">
-              <span className="form-label__text">Familiya</span>
-              <br />
+            </Form.Item>
+            <Form.Item
+              label="Familiya"
+              name="FullName"
+              rules={[
+                {
+                  required: true,
+                  message: "familiya",
+                },
+              ]}
+            >
               <Input
-                name="LastName"
+                className="object__manzil"
                 placeholder="familiyangizni kiriting"
-                className="form-control"
-                required
               />
-            </div>
-            <div className="col-4 p-1">
-              <span className="form-label__text">Otangizni ismi</span>
-              <br />
-              <Input
-                name="FullName"
-                placeholder="Otangizni kiriting"
-                className="form-control"
-                required
-              />
-            </div>
+            </Form.Item>
+            <Form.Item
+              label="Otangizni ismi"
+              name="Otchestva"
+              rules={[
+                {
+                  required: true,
+                  message: "Otangizni ismi",
+                },
+              ]}
+            >
+              <Input className="object__manzil" placeholder="Otangizni ismi" />
+            </Form.Item>
           </div>
           <div className="NameInfo">
-            <div className="col-md-6 box-title p-1">
-              <span className="form-label__text">Telefon raqami:</span>
-              <br />
+            <Form.Item>
               <PatternFormat
                 className="form-control"
                 placeholder={"Telefon raqami +998"}
@@ -324,18 +348,19 @@ const ShartnomaView = () => {
                 mask={"_"}
                 required
               />
-            </div>
-            <div className="col-6 p-1">
-              {" "}
-              <span className="form-label__text">Passport berilgan joy</span>
-              <br />
-              <Input
-                name="PassportName"
-                placeholder="manzilni kiriting"
-                className="form-control"
-                required
-              />
-            </div>
+            </Form.Item>
+            <Form.Item
+              label="uy manzili"
+              name="passportName"
+              rules={[
+                {
+                  required: true,
+                  message: "Uy manzili",
+                },
+              ]}
+            >
+              <Input className="object__manzil" />
+            </Form.Item>
           </div>
           <div className="NameInfo">
             <div className="col-md-4 box-title p-1">
@@ -374,84 +399,92 @@ const ShartnomaView = () => {
           </div>
 
           <div className="NameInfo">
-            <div className="col-6 p-1">
-              <span className="form-label__text">Uy manzili</span>
-              <br />
-              <Input
-                name="UyManzili"
-                placeholder="Uy manzili"
-                className="form-control"
-                required
-              />
-            </div>
-
-            <div className="col-2 p-1">
-              <span className="form-label__text">Bino qavati</span>
-              <br />
-
-              <Input
-                name="BinoQavati"
-                placeholder="Bino qavati"
-                className="form-control"
-                required
-              />
-            </div>
-            <div className="col-2 p-1">
-              <span className="form-label__text">uy maydoni</span>
-              <br />
-
-              <Input
-                name="BinoQavati"
-                placeholder="Bino qavati"
-                className="form-control"
-                required
-              />
-            </div>
-            <div className="col-2 p-1">
-              <span className="form-label__text">Uy raqami</span>
-              <br />
-
-              <Input
-                name="BinoQavati"
-                placeholder="Bino qavati"
-                className="form-control"
-                required
-              />
-            </div>
+            <Form.Item
+              label="uy manzili"
+              name="UyManzili"
+              rules={[
+                {
+                  required: true,
+                  message: "Uy manzili",
+                },
+              ]}
+            >
+              <Input className="object__manzil" />
+            </Form.Item>
+            <Form.Item
+              label="Qavat"
+              name="UyQavat"
+              rules={[
+                {
+                  required: true,
+                  message: "Bino qavati",
+                },
+              ]}
+            >
+              <InputNumber className="object__numbers" />
+            </Form.Item>
+            <Form.Item
+              label="uy maydoni"
+              name="UyMaydoni"
+              rules={[
+                {
+                  required: true,
+                  message: "Uy maydoni",
+                },
+              ]}
+            >
+              <InputNumber className="object__numbers" />
+            </Form.Item>
+            <Form.Item
+              label="uy raqami"
+              name="UyRaqami"
+              rules={[
+                {
+                  required: true,
+                  message: "Uy raqami",
+                },
+              ]}
+            >
+              <InputNumber className="object__numbers" />
+            </Form.Item>
           </div>
           <div className="NameInfo">
-            <div className="col-4 p-1">
-              {" "}
-              <span className="form-label__text">Uyning narxi</span>
-              <br />
-              <Input
-                name="Name"
-                placeholder="ismingizni kiriting"
-                className="form-control"
-                required
-              />
-            </div>
-
-            <div className="col-4 p-1">
-              <span className="form-label__text">to'langan narx</span>
-              <br />
-              <Input
-                name="LastName"
-                placeholder="familiyangizni kiriting"
-                className="form-control"
-                required
-              />
-            </div>
-            <div className="col-4 p-1">
-              <span className="form-label__text">Qolgan narx</span>
-              <br />
-              <Input
-                name="FullName"
-                placeholder="Otangizni kiriting"
-                className="form-control"
-                required
-              />
-            </div>
+            <Form.Item
+              label="Uyning narxi"
+              name="UyningNarxi"
+              rules={[
+                {
+                  required: true,
+                  message: "Uyning narxi",
+                },
+              ]}
+            >
+              <InputNumber className="object__number" />
+            </Form.Item>
+            <Form.Item
+              label="to'langan narx"
+              name="tolanganNarx"
+              rules={[
+                {
+                  required: true,
+                  message: "to'langan narx",
+                },
+              ]}
+            >
+              <InputNumber className="object__number" />
+            </Form.Item>
+            <Form.Item
+              label="Qolgan narx"
+              name="QolganNarx"
+              rules={[
+                {
+                  required: true,
+                  message: "Qolgan narx",
+                },
+              ]}
+            >
+              <InputNumber className="object__number" />
+            </Form.Item>
           </div>
 
           {/* <div className="col-12 box-title p-3">
@@ -474,9 +507,15 @@ const ShartnomaView = () => {
               Kiritilgan ma'lumotlar haqiqiyligini tasdiqlayman
             </Checkbox>
             <br />
-            <button className="btn btn-primary" type="submit">
-              Yuborish
-            </button>
+            <Form.Item>
+              <Button
+                className="typeObject__btn"
+                type="primary"
+                htmlType="submit"
+              >
+                Yuborish
+              </Button>
+            </Form.Item>
           </div>
         </Form>
       </div>

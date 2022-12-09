@@ -1,64 +1,114 @@
-import React from "react";
-import { Form, Input, Button } from "antd";
-import Upload from "antd/es/upload/Upload";
+import React, { useRef } from "react";
+import {CloudUploadOutlined } from "@ant-design/icons";
+import '../type/Type.css'
+import { Col, Row, Form, Input, Button, Upload, InputNumber } from "antd";
 const TypeObekt = () => {
+   const onFinish = (values) => {
+     console.log("Success:", values);
+   };
+   const onFinishFailed = (errorInfo) => {
+     console.log("Failed:", errorInfo);
+   };
   return (
     <div>
-      <div className="container">
+      <div className="typeObject__info">
         <div className="row">
           <h2 className="obyekt__info">Tip qo'shish</h2> <hr />
-          <Form onSubmit>
-            <span className="form-label__text">Nomi</span>
-            <br />
-            <Input
+          <Form
+            onSubmit
+            name="basic"
+            // ref={useRef}
+            autoComplete="off"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            
+          >
+            <Form.Item
+              label="Nomi"
               name="name"
-              placeholder="Nomi"
-              className="form-control p-2"
-              required
-            />
-            <span className="form-label__text">Padez soni</span>
-            <br />
-            <Input
-              type="number"
-              name="padez_soni"
-              placeholder="Padez soni"
-              className="form-control p-2"
-              required
-            />
-            <span className="form-label__text">Qavat soni</span>
-            <br />
-            <Input
-              type="number"
-              name="qavat_soni"
-              placeholder="Qavat soni"
-              className="form-control p-2"
-              required
-            />
-            <span className="form-label__text">Bir Padezda Xonalar soni</span>
-            <br />
-            <Input
-              type="number"
-              name="bir_padez_xona"
-              placeholder="Bir Padezda Xonalar soni"
-              className="form-control p-2"
-              required
-            />
-            <div className="col-md-6 box-title p-1">
-              <span className="form-label__text">Rasm yuklash</span>
+              rules={[
+                {
+                  required: true,
+                  message: "Username is required",
+                },
+              ]}
+            >
+              <Input className="typeObject__Info" />
+            </Form.Item>
+            <div className="">
+              <Row>
+                <Form.Item
+                  label="Padez soni"
+                  name="padez"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Padez soni",
+                    },
+                  ]}
+                >
+                  <InputNumber className="object__number" />
+                </Form.Item>
+
+                <Form.Item
+                  label="Qavat soni"
+                  name="qavat"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Qavat soni",
+                    },
+                  ]}
+                >
+                  <InputNumber className="object__number" />
+                </Form.Item>
+
+                <Form.Item
+                  label="Xona soni"
+                  name="xona"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Xona soni",
+                    },
+                  ]}
+                >
+                  <InputNumber className="object__number" />
+                </Form.Item>
+              </Row>
+            </div>
+
+            <Form.Item label="Upload" valuePropName="fileList">
               <Upload
                 name="photo"
-                className="upload_file"
+                action="/upload.do"
+                listType="picture-card"
                 accept=".png,.jpg"
                 beforeUpload={(file) => {
                   return false;
                 }}
+                rules={[
+                  {
+                    required: true,
+                    message: "Username is required",
+                  },
+                ]}
               >
-                <Button className="bg:">Select file</Button>
+                <div>
+                  <CloudUploadOutlined />
+
+                  <div className="">Rasm yuklash</div>
+                </div>
               </Upload>
-            </div>
-            <button className="btn btn-primary obyekt__btn" type="submit">
-              Yuborish
-            </button>
+            </Form.Item>
+            <Form.Item>
+              <Button className="typeObject__btn" type="primary" htmlType="submit">
+                Yuborish
+              </Button>
+            </Form.Item>
           </Form>
         </div>
       </div>
