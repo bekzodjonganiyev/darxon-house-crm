@@ -10,7 +10,7 @@ const typeAPI = {
     },
 
     addType(body) {
-        return http.post(`/tip`, {body})
+        return http.post(`/tip`, body)
     },
 
     editType(body, id) {

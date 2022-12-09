@@ -66,7 +66,7 @@ const objectSlice = createSlice({
     [getObject.fulfilled]: (state, action) => {
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
-        state.objects = action.payload.data.data;
+        state.objects = action.payload.data
       }
     },
 

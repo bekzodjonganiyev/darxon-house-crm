@@ -1,15 +1,43 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button, Space, Input } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./Type.css";
 
 import ObjectCard from "../../components/object_card/ObjectCard";
 
+import { getType } from "../../utils/slices/typeSlice";
+
 const Type = () => {
   const { Search } = Input;
+  const { types, loadingStatus } = useSelector((state) => state.typeSlice);
+  let content = null;
+  
+  const dispatch = useDispatch();
   const onSearch = (value) => console.log(value);
-  const a = [1, 2, 34, 4, 5, 6, 342, 4, 5, 6, 76];
+
+  useEffect(() => {
+    dispatch(getType())
+    // eslint-disable-next-line
+  }, []);
+  
+  if (loadingStatus === "loading") {
+    content = <h1>Loading...</h1>;
+  } else {
+    content = (
+      <Space className="type-body">
+        {types &&
+          types.map((i) => (
+            <ObjectCard
+              key={i._id}
+              objectName={i.name}
+              isType={true}
+            />
+          ))}
+      </Space>
+    );
+  }
 
   return (
     <>
@@ -29,17 +57,7 @@ const Type = () => {
             </Button>
           </Link>
         </Space>
-
-        <Space className="type-body">
-          {a.map((i) => (
-            <ObjectCard
-              key={i}
-              defaultTitle={"Turi"}
-              title={"Example title"}
-              objectName={"Bino turi"}
-            />
-          ))}
-        </Space>
+        {content}
       </div>
     </>
   );

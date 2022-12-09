@@ -1,21 +1,52 @@
-import React from "react";
-import {Link} from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Button, Input, Space } from "antd";
+import { useDispatch, useSelector } from "react-redux";
 
 import "./Object.css";
 
 import ObjectCard from "../../components/object_card/ObjectCard";
 
+import { getObject } from "../../utils/slices/objectSlice";
+
 const Object = () => {
   const { Search } = Input;
-  const onSearch = (value) => console.log(value);
-  const a = [1, 2, 34, 4, 5, 6, 342, 4, 5, 6, 76];
+  const { objects, loadingStatus } = useSelector((state) => state.objectSlice);
+  let content = null;
 
+  const dispatch = useDispatch();
+  const onSearch = (value) => console.log(value);
+
+  useEffect(() => {
+    dispatch(getObject())
+    // eslint-disable-next-line
+  }, []) 
+
+  console.log(loadingStatus);
+
+  if (loadingStatus === "loading") {
+    content = <h1>Loading...</h1>;
+  } else {
+    content = (
+      <Space className="object-body">
+        {objects &&
+          objects.map((i) => (
+            <ObjectCard
+              to={i.Nomi}
+              key={i._id}
+              defaultTitle={"Manzili"}
+              objectName={i.Nomi}
+              title={"manzil qushilmagan(back)"}
+            />
+          ))}
+      </Space>
+    );
+  }
   return (
     <>
       <h1>Obyektlar</h1>
       <div className="object">
-        <Space className="object-header" direction="horizontal">
+        <Space className="object-header">
           <Search
             placeholder="input search text"
             allowClear
@@ -29,18 +60,7 @@ const Object = () => {
             </Button>
           </Link>
         </Space>
-
-        <Space className="object-body">
-          {a.map((i) => (
-            <ObjectCard
-              key={i}
-              to={"a"}
-              defaultTitle={"Manzili"}
-              title={"Example title"}
-              objectName={"Object name"}
-            />
-          ))}
-        </Space>
+        {content}
       </div>
     </>
   );

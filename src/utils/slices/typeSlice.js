@@ -82,7 +82,7 @@ const typeSlice = createSlice({
       }
     },
 
-    [addType]: (state) => {
+    [addType.pending]: (state) => {
       if (state.loadingStatus === "default") {
         state.loadingStatus = "loading";
       }
@@ -90,8 +90,7 @@ const typeSlice = createSlice({
     [addType.fulfilled]: (state, action) => {
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
-        state.types.push(action.payload.data.data)
-        console.log(action.payload)
+        state.types.push(action.payload.data)
       }
     },
 
