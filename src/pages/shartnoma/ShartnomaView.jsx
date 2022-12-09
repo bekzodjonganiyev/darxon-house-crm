@@ -275,218 +275,186 @@ const ShartnomaView = () => {
       <div className="row">
         <div className="shartnoma__info">
           <h3>Shartnoma tuzish</h3>
+          <hr />
         </div>
         <Form onSubmit>
           <div className="NameInfo">
             <div className="col-4 p-1">
               {" "}
-              
-                <span className="form-label__text">Ism</span>
-                <br />
-                <Input
-                  name="Name"
-                  placeholder="ismingizni kiriting"
-                  className="form-control"
-                  required
-                />
-              
+              <span className="form-label__text">Ism</span>
+              <br />
+              <Input
+                name="Name"
+                placeholder="ismingizni kiriting"
+                className="form-control"
+                required
+              />
             </div>
 
             <div className="col-4 p-1">
-              
-                <span className="form-label__text">Familiya</span>
-                <br />
-                <Input
-                  name="LastName"
-                  placeholder="familiyangizni kiriting"
-                  className="form-control"
-                  required
-                />
-             
+              <span className="form-label__text">Familiya</span>
+              <br />
+              <Input
+                name="LastName"
+                placeholder="familiyangizni kiriting"
+                className="form-control"
+                required
+              />
             </div>
             <div className="col-4 p-1">
-              
-                <span className="form-label__text">Otangizni ismi</span>
-                <br />
-                <Input
-                  name="FullName"
-                  placeholder="Otangizni kiriting"
-                  className="form-control"
-                  required
-                />
-              
+              <span className="form-label__text">Otangizni ismi</span>
+              <br />
+              <Input
+                name="FullName"
+                placeholder="Otangizni kiriting"
+                className="form-control"
+                required
+              />
             </div>
           </div>
           <div className="NameInfo">
             <div className="col-md-6 box-title p-1">
-            
-                <span className="form-label__text">Telefon raqami:</span>
-                <br />
-                <PatternFormat
-                  className="form-control"
-                  placeholder={"Telefon raqami +998"}
-                  value=""
-                  format="+998(##)###-##-##"
-                  mask={"_"}
-                  required
-                />
-              
+              <span className="form-label__text">Telefon raqami:</span>
+              <br />
+              <PatternFormat
+                className="form-control"
+                placeholder={"Telefon raqami +998"}
+                value=""
+                format="+998(##)###-##-##"
+                mask={"_"}
+                required
+              />
             </div>
             <div className="col-6 p-1">
               {" "}
-              
-                <span className="form-label__text">Passport berilgan joy</span>
-                <br />
-                <Input
-                  name="PassportName"
-                  placeholder="manzilni kiriting"
-                  className="form-control"
-                  required
-                />
-             
+              <span className="form-label__text">Passport berilgan joy</span>
+              <br />
+              <Input
+                name="PassportName"
+                placeholder="manzilni kiriting"
+                className="form-control"
+                required
+              />
             </div>
           </div>
           <div className="NameInfo">
             <div className="col-md-4 box-title p-1">
-              
-                <span className="form-label__text">Passport seriya:</span>
-                <br />
-                <Input
-                  name="PassportSeria"
-                  placeholder="AA1234567"
-                  className="form-control"
-                  required
-                />
-              
+              <span className="form-label__text">Passport seriya:</span>
+              <br />
+              <Input
+                name="PassportSeria"
+                placeholder="AA1234567"
+                className="form-control"
+                required
+              />
             </div>
 
             <div className="col-md-4 box-title p-1">
-              
-                <span className="form-label__text">Passport JSHR raqami:</span>
-                <br />
-                <Input
-                  name="PassportSeria"
-                  placeholder="12345678901234"
-                  className="form-control"
-                  required
-                />
-              
+              <span className="form-label__text">Passport JSHR raqami:</span>
+              <br />
+              <Input
+                name="PassportSeria"
+                placeholder="12345678901234"
+                className="form-control"
+                required
+              />
             </div>
             <div className="col-4 p-1">
-              
-                <span className="form-label__text">Passport berilgan vaqt</span>
-                <br />
-                <data />
-                <Input
-                  type="date"
-                  name="LastName"
-                  placeholder="familiyangizni kiriting"
-                  className="form-control"
-                  required
-                />
-             
+              <span className="form-label__text">Passport berilgan vaqt</span>
+              <br />
+              <data />
+              <Input
+                type="date"
+                name="LastName"
+                placeholder="familiyangizni kiriting"
+                className="form-control"
+                required
+              />
             </div>
           </div>
 
           <div className="NameInfo">
             <div className="col-6 p-1">
-              
-                <span className="form-label__text">Uy manzili</span>
-                <br />
-                <Input
-                  name="UyManzili"
-                  placeholder="Uy manzili"
-                  className="form-control"
-                  required
-                />
-              
+              <span className="form-label__text">Uy manzili</span>
+              <br />
+              <Input
+                name="UyManzili"
+                placeholder="Uy manzili"
+                className="form-control"
+                required
+              />
             </div>
 
             <div className="col-2 p-1">
-              
-                <span className="form-label__text">Bino qavati</span>
-                <br />
+              <span className="form-label__text">Bino qavati</span>
+              <br />
 
-                <Input
-                  name="BinoQavati"
-                  placeholder="Bino qavati"
-                  className="form-control"
-                  required
-                />
-              
+              <Input
+                name="BinoQavati"
+                placeholder="Bino qavati"
+                className="form-control"
+                required
+              />
             </div>
             <div className="col-2 p-1">
-              
-                <span className="form-label__text">uy maydoni</span>
-                <br />
+              <span className="form-label__text">uy maydoni</span>
+              <br />
 
-                <Input
-                  name="BinoQavati"
-                  placeholder="Bino qavati"
-                  className="form-control"
-                  required
-                />
-              
+              <Input
+                name="BinoQavati"
+                placeholder="Bino qavati"
+                className="form-control"
+                required
+              />
             </div>
             <div className="col-2 p-1">
-              
-                <span className="form-label__text">Uy raqami</span>
-                <br />
+              <span className="form-label__text">Uy raqami</span>
+              <br />
 
-                <Input
-                  name="BinoQavati"
-                  placeholder="Bino qavati"
-                  className="form-control"
-                  required
-                />
-            
+              <Input
+                name="BinoQavati"
+                placeholder="Bino qavati"
+                className="form-control"
+                required
+              />
             </div>
           </div>
           <div className="NameInfo">
             <div className="col-4 p-1">
               {" "}
-          
-                <span className="form-label__text">Uyning narxi</span>
-                <br />
-                <Input
-                  name="Name"
-                  placeholder="ismingizni kiriting"
-                  className="form-control"
-                  required
-                />
-             
+              <span className="form-label__text">Uyning narxi</span>
+              <br />
+              <Input
+                name="Name"
+                placeholder="ismingizni kiriting"
+                className="form-control"
+                required
+              />
             </div>
 
             <div className="col-4 p-1">
-              
-                <span className="form-label__text">to'langan narx</span>
-                <br />
-                <Input
-                  name="LastName"
-                  placeholder="familiyangizni kiriting"
-                  className="form-control"
-                  required
-                />
-             
+              <span className="form-label__text">to'langan narx</span>
+              <br />
+              <Input
+                name="LastName"
+                placeholder="familiyangizni kiriting"
+                className="form-control"
+                required
+              />
             </div>
             <div className="col-4 p-1">
-             
-                <span className="form-label__text">Qolgan narx</span>
-                <br />
-                <Input
-                  name="FullName"
-                  placeholder="Otangizni kiriting"
-                  className="form-control"
-                  required
-                />
-              
+              <span className="form-label__text">Qolgan narx</span>
+              <br />
+              <Input
+                name="FullName"
+                placeholder="Otangizni kiriting"
+                className="form-control"
+                required
+              />
             </div>
           </div>
 
-    
-          
-
-          <div className="col-12 box-title p-3">
+          {/* <div className="col-12 box-title p-3">
             <span>Yashash hududi:</span>
             <Select options={selectRegion2} onChange={(e)=>{console.log(e.target.value)}}/>
           </div>
@@ -500,12 +468,16 @@ const ShartnomaView = () => {
                 </Select.Option>
               ))}
             </Select>
+          </div> */}
+          <div className="checout__btn">
+            <Checkbox>
+              Kiritilgan ma'lumotlar haqiqiyligini tasdiqlayman
+            </Checkbox>
+            <br />
+            <button className="btn btn-primary" type="submit">
+              Yuborish
+            </button>
           </div>
-          <Checkbox>Kiritilgan ma'lumotlar haqiqiyligini tasdiqlayman</Checkbox>
-          <br />
-          <button className="btn btn-primary" type="submit">
-            Yuborish
-          </button>
         </Form>
       </div>
     </div>
