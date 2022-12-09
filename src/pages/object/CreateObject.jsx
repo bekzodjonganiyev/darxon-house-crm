@@ -1,62 +1,75 @@
 import React from 'react'
-import { Form, Input} from "antd";
-
+import { Form, Input, DatePicker,Button } from "antd";
+import PlusOutlined from "@ant-design/icons";
+import '../object/Object.css'
+const { RangePicker } = DatePicker;
 const CreateObject = () => {
+    const onFinish = (values) => {
+      console.log("Success:", values);
+    };
+    const onFinishFailed = (errorInfo) => {
+      console.log("Failed:", errorInfo);
+    };
   return (
     <div>
-      <div className="container">
+      <div className="creatObject__info">
         <div className="row">
-          <h2 className='obyekt__info'>Obyekt qo'shish</h2> <hr />
-          <Form onSubmit>
-            <span className="form-label__text">Nomi</span>
-            <br />
-            <Input
-              name="Name"
-              placeholder="ismingizni kiriting"
-              className="form-control p-2"
-              required
-            />
-            <span className="form-label__text">manzili</span>
-            <br />
-            <Input
-              name="Name"
-              placeholder="ismingizni kiriting"
-              className="form-control p-2"
-              required
-            />
-            <div className="NameInfo">
-              <div className="col-md-6 p-2">
-                <span className="form-label__text">
-                  Qurilishni Boshlanish Sanasi
-                </span>
-                <br />
-                <data />
-                <Input
-                  type="date"
-                  name="LastName"
-                  placeholder="familiyangizni kiriting"
-                  className="form-control"
-                  required
-                />
-              </div>
-              <div className="col-md-6 p-2">
-                <span className="form-label__text">
-                  Qurilishni Bitish Sanasi
-                </span>
-                <br />
-                <data />
-                <Input
-                  type="date"
-                  name="LastName"
-                  placeholder="familiyangizni kiriting"
-                  className="form-control"
-                  required
-                />
-              </div>
+          <h2 className="obyekt__info">Obyekt qo'shish</h2> <hr />
+          <Form
+            onSubmit
+            name="basic"
+            // ref={useRef}
+            autoComplete="off"
+            initialValues={{
+              remember: true,
+            }}
+            onFinish={onFinish}
+            onFinishFailed={onFinishFailed}
+            
+          >
+            <div className="obektName">
+              <Form.Item
+                className="ObektInfo"
+                name="ObektInfo"
+                label="Obyekt nomi"
+                required
+                rules={[
+                  {
+                    required: true,
+                    message: "Obyekt soni",
+                  },
+                ]}
+              >
+                <Input className="CreatObject__data" />
+              </Form.Item>
+
+              <Form.Item
+                className="ObektInfo"
+                name="ObyektManzili"
+                label="Obyekt manzili"
+                rules={[
+                  {
+                    required: true,
+                    message: "Obyekt manzili",
+                  },
+                ]}
+              >
+                <Input className="CreatObject__data" />
+              </Form.Item>
+              <Form.Item
+                className="ObektInfo"
+                label="Boshlanish va tugash sanasi"
+                required
+                rows={10}
+              >
+                <RangePicker className="CreatObject__data" />
+              </Form.Item>
+              <Form.Item>
+                <Button type="primary" htmlType="submit">
+                  Yuborish
+                </Button>
+              </Form.Item>
             </div>
-            <button className="btn btn-primary obyekt__btn" type="submit">
-              Yuborish
-            </button>
           </Form>
         </div>
       </div>

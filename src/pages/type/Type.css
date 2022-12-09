@@ -42,3 +42,27 @@ h1 {
 .upload-icon {
   color: red;
 }
+.typeNumber{
+  display: flex;
+  justify-content: space-evenly;
+}
+.typeObject__Info{
+  width: 50vw;
+  padding: 10px;
+}
+.object__number{
+  width: 12vw;
+  padding: 5px;
+}
+
+.typeObject__info{
+  display: flex;
+  margin: 8rem auto;
+  justify-content: center;
+}
+.typeObject__btn{
+  display: flex;
+ 
+  margin:0 1rem;
+  
+}
