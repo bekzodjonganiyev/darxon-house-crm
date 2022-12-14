@@ -2,7 +2,7 @@ import React from "react";
 import { PatternFormat } from "react-number-format";
 
 
-import { Form, DatePicker, Input, Button, Checkbox, InputNumber } from "antd";
+import { Form, DatePicker, Input, Button,InputNumber } from "antd";
 
 import '../shartnoma/shartnoma.css'
 const ShartnomaView = () => {
