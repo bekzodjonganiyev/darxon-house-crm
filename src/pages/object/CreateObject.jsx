@@ -22,43 +22,58 @@ const CreateObject = () => {
             onFinish={onFinish}
           >
             <div className="obektName">
-              <Form.Item
-                className="ObektInfo"
-                name="ObektInfo"
-                label="Obyekt nomi"
-                required
-                rules={[
-                  {
-                    required: true,
-                    message: "Obyekt soni",
-                  },
-                ]}
-              >
-                <Input className="CreatObject__data" />
-              </Form.Item>
+              <div className="ssc">
+                <span>
+                  <label htmlFor="Ism">Obyekt nomi</label>
+                </span>
 
-              <Form.Item
-                className="ObektInfo"
-                name="ObyektManzili"
-                label="Obyekt manzili"
-                rules={[
-                  {
-                    required: true,
-                    message: "Obyekt manzili",
-                  },
-                ]}
-              >
-                <Input className="CreatObject__data" />
-              </Form.Item>
-              <Form.Item
-                name="ObektData"
-                className="ObektInfo"
-                label="Boshlanish va tugash sanasi"
-                required
-                rows={10}
-              >
-                <RangePicker className="CreatObject__data" />
-              </Form.Item>
+                <Form.Item
+                  className="ObektInfo"
+                  name="ObektInfo"
+                  required
+                  rules={[
+                    {
+                      required: true,
+                      message: "Obyekt soni",
+                    },
+                  ]}
+                >
+                  <Input className="CreatObject__data" />
+                </Form.Item>
+              </div>
+              <div className="ssc">
+                <span>
+                  <label htmlFor="Ism">Obyekt manzili</label>
+                </span>
+
+                <Form.Item
+                  className="ObektInfo"
+                  name="ObyektManzili"
+                  rules={[
+                    {
+                      required: true,
+                      message: "Obyekt manzili",
+                    },
+                  ]}
+                >
+                  <Input className="CreatObject__data" />
+                </Form.Item>
+              </div>
+              <div className="ssc">
+                <span>
+                  <label htmlFor="Ism">Boshlanish va tugash sanasi</label>
+                </span>
+
+                <Form.Item
+                  name="ObektData"
+                  className="ObektInfo"
+                  
+                  required
+                  rows={10}
+                >
+                  <RangePicker className="CreatObject__data" />
+                </Form.Item>
+              </div>
               <Form.Item>
                 <Button type="primary" htmlType="submit">
                   Yuborish
