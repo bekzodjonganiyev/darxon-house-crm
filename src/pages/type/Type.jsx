@@ -42,6 +42,7 @@ const Type = () => {
   return (
     <>
       <h1>Tiplar</h1>
+     
       <div className="type">
         <Space className="type-header">
           <Search
