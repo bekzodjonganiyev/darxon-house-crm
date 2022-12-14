@@ -1,34 +1,49 @@
 .NameInfo
 {
     display: flex;
-    margin-top: 20px;
     justify-content: space-between;
     gap: 2px;
   
 }
-.shartnoma__info h3{
+.shartnoma__info h3, .obyekt__info{
     display: flex;
     justify-content: center;
     color: #1890ff;
-        text-shadow: 0 0 .25px currentcolor;
-        font-weight: 400;
+    text-shadow: 0 0 .25px currentcolor;
+    font-weight: 400;
+    font-family: 'Roboto';
+        font-style: normal;
+      font-size: 2rem;
 }
-.checout__btn{
-    margin-top: 24px;
-}
-.checout__btn button{
-    margin: 14px 0;
-}
+
+
 .object__numbers {
-    width: 9vw;
+    
     padding: 5px;
 }
+.object_tel{
+    width: 20rem;
+}
 .object__manzil, .form-control{
-    width: 18vw;
-        padding: 9px !important;
+    width: 25vw;
+        padding: 14px;
 }
 .shartnomaObject__info{
     display: flex;
-        margin: 4rem auto;
-        justify-content: center;
+       width: 100vw; 
+       margin: 0 auto;
+}
+.dssds{
+    border: none;
+    padding: 16px 0;
+}
+.box-info{
+    margin: 0 20px;
+}
+.box-info span label{
+    margin: 0 10px;
+    font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        
 }
