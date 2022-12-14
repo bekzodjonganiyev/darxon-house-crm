@@ -1,7 +1,7 @@
 .NameInfo
 {
     display: flex;
-    margin-top: 20px;
+    
     justify-content: space-between;
     gap: 2px;
   
@@ -13,22 +13,24 @@
         text-shadow: 0 0 .25px currentcolor;
         font-weight: 400;
 }
-.checout__btn{
-    margin-top: 24px;
-}
-.checout__btn button{
-    margin: 14px 0;
-}
+
+
 .object__numbers {
-    width: 9vw;
+    
     padding: 5px;
 }
-.object__manzil, .form-control{
-    width: 18vw;
-        padding: 9px !important;
+.object_tel{
+    width: 20rem;
+}
+.object__manzil, .form-control,.object__manzilv{
+    width: 20vw;
+        padding: 9px;
 }
 .shartnomaObject__info{
     display: flex;
-        margin: 4rem auto;
+       width: 90vw; 
         justify-content: center;
+}
+.dssds{
+    padding: 10px 0;
 }

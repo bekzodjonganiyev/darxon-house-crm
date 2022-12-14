@@ -1,15 +1,12 @@
 import React from 'react'
 import { Form, Input, DatePicker,Button } from "antd";
-import PlusOutlined from "@ant-design/icons";
 import '../object/Object.css'
 const { RangePicker } = DatePicker;
 const CreateObject = () => {
-    const onFinish = (values) => {
-      console.log("Success:", values);
+    const onFinish = (e) => {
+      console.log(e.ObektInfo);
     };
-    const onFinishFailed = (errorInfo) => {
-      console.log("Failed:", errorInfo);
-    };
+    
   return (
     <div>
       <div className="creatObject__info">
@@ -18,14 +15,11 @@ const CreateObject = () => {
           <Form
             onSubmit
             name="basic"
-            // ref={useRef}
             autoComplete="off"
             initialValues={{
               remember: true,
             }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            
           >
             <div className="obektName">
               <Form.Item
@@ -57,6 +51,7 @@ const CreateObject = () => {
                 <Input className="CreatObject__data" />
               </Form.Item>
               <Form.Item
+                name="ObektData"
                 className="ObektInfo"
                 label="Boshlanish va tugash sanasi"
                 required

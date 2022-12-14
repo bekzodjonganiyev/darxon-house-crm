@@ -3,12 +3,9 @@ import {CloudUploadOutlined } from "@ant-design/icons";
 import '../type/Type.css'
 import { Col, Row, Form, Input, Button, Upload, InputNumber } from "antd";
 const TypeObekt = () => {
-   const onFinish = (values) => {
-     console.log("Success:", values);
-   };
-   const onFinishFailed = (errorInfo) => {
-     console.log("Failed:", errorInfo);
-   };
+    const onFinish = (e) => {
+      console.log(e);
+    };
   return (
     <div>
       <div className="typeObject__info">
@@ -23,8 +20,6 @@ const TypeObekt = () => {
               remember: true,
             }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
-            
           >
             <Form.Item
               label="Nomi"
@@ -81,9 +76,20 @@ const TypeObekt = () => {
               </Row>
             </div>
 
-            <Form.Item label="Upload" valuePropName="fileList">
+            <Form.Item
+              name="photo"
+              label="Upload"
+              rules={[
+                {
+                  required: true,
+                  message: "rasm yuklamadi",
+                },
+              ]}
+              valuePropName="fileList"
+              required
+            >
               <Upload
-                name="photo"
+              name="photo"
                 action="/upload.do"
                 listType="picture-card"
                 accept=".png,.jpg"
@@ -105,7 +111,11 @@ const TypeObekt = () => {
               </Upload>
             </Form.Item>
             <Form.Item>
-              <Button className="typeObject__btn" type="primary" htmlType="submit">
+              <Button
+                className="typeObject__btn"
+                type="primary"
+                htmlType="submit"
+              >
                 Yuborish
               </Button>
             </Form.Item>
