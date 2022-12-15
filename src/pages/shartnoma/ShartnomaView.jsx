@@ -1,12 +1,16 @@
 import React, { useRef, useState } from "react";
 import { PatternFormat } from "react-number-format";
 import { Form, Input, Button, DatePicker, InputNumber } from "antd";
+import {NumericFormat} from "react-number-format";
+import { useFormik } from "formik";
 import { jsPDF } from "jspdf";
 
 import "../shartnoma/shartnoma.css";
 import Test2 from "../../components/Test2";
 
 const ShartnomaView = () => {
+      
+
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [obj, setObj] = useState({});
@@ -149,6 +153,8 @@ const ShartnomaView = () => {
               </span>
               <Form.Item name="phone">
                 <PatternFormat
+                  minLength={9}
+                  maxLength={9}
                   className="object__manzil dssds"
                   placeholder={"Telefon raqami +998"}
                   value=""
@@ -173,10 +179,18 @@ const ShartnomaView = () => {
                   },
                 ]}
               >
-                <Input className="object__manzil" placeholder="AA1234567" />
+                <Input
+                  type="text"
+                  name="passport"
+                  placeholder="AA1234567"
+                  minLength={9}
+                  maxLength={9}
+                  className="form-control"
+                  required
+                />
               </Form.Item>
             </div>
-            <div className="box-info">
+            <div className="">
               <span>
                 <label htmlFor="Ism">JSHR raqami</label>
               </span>
@@ -189,9 +203,14 @@ const ShartnomaView = () => {
                   },
                 ]}
               >
-                <Input
-                  className="object__manzil"
-                  placeholder="12345678901234"
+                <NumericFormat
+                  minLength={14}
+                  maxLength={14}
+                  className="form-controls add-patients__input"
+                  placeholder={` 123456789012`}
+                  format="##############"
+                  mask={"_"}
+                  required
                 />
               </Form.Item>
             </div>
@@ -435,7 +454,11 @@ const ShartnomaView = () => {
               flatNumber={"backendan kelmayapyi"}
             />
           </div>
-          <Button style={{ marginLeft: "30px" }} onClick={handleGeneratePdf} type="primary">
+          <Button
+            style={{ marginLeft: "30px" }}
+            onClick={handleGeneratePdf}
+            type="primary"
+          >
             Yukalsh
           </Button>
           <br />

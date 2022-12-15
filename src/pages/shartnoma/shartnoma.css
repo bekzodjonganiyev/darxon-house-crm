@@ -2,7 +2,7 @@
 {
     display: flex;
     justify-content: space-between;
-    gap: 2px;
+
   
 }
 .shartnoma__info h3, .obyekt__info{
@@ -15,18 +15,20 @@
         font-style: normal;
       font-size: 2rem;
 }
-
-
 .object__numbers {
     
     padding: 5px;
 }
 .object_tel{
-    width: 20rem;
+width: 20rem ;
 }
-.object__manzil, .form-control{
-    width: 25vw;
+.object__manzil ,.form-control{
+    width: 25vw !important;
         padding: 14px;
+}
+.form-controls{
+    width: 23vw !important;
+        padding: 16px;
 }
 .shartnomaObject__info{
     display: flex;
