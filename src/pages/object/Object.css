@@ -39,7 +39,7 @@ h1 {
     width: 60vw;
 }
 .creatObject__info{
-    margin: 8rem auto;
+    margin: 7rem auto;
     width: 80vw;
     padding: 10px;
     display: flex;
@@ -56,4 +56,9 @@ h1 {
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 400;
+}
+.btn{
+  width: 10rem;
+  height: 2.5rem;
+  margin-left: 6px;
 }

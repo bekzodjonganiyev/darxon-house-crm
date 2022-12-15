@@ -37,7 +37,7 @@ const TypeObekt = () => {
               <Row>
                 <Form.Item
                   label="Padez soni"
-                  name="padez"
+                  name="padez_soni"
                   rules={[
                     {
                       required: true,
@@ -50,7 +50,7 @@ const TypeObekt = () => {
 
                 <Form.Item
                   label="Qavat soni"
-                  name="qavat"
+                  name="qavat_soni"
                   rules={[
                     {
                       required: true,
@@ -63,7 +63,7 @@ const TypeObekt = () => {
 
                 <Form.Item
                   label="Xona soni"
-                  name="xona"
+                  name="bir_padez_xona"
                   rules={[
                     {
                       required: true,
@@ -89,7 +89,7 @@ const TypeObekt = () => {
               required
             >
               <Upload
-              name="photo"
+                name="photo"
                 action="/upload.do"
                 listType="picture-card"
                 accept=".png,.jpg"
@@ -112,7 +112,7 @@ const TypeObekt = () => {
             </Form.Item>
             <Form.Item>
               <Button
-                className="typeObject__btn"
+                className=" btn"
                 type="primary"
                 htmlType="submit"
               >

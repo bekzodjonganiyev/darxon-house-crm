@@ -27,3 +27,27 @@
 .delete-icon{
     color: red !important;
 }
+.object-info, .object-data{
+    display: flex;
+}
+.object__Info{
+    width: 9rem;
+    margin: 0 8px;
+    padding: 7px 0;
+}
+.ObjektData{
+    width: 14rem;
+        margin: 0 8px;
+        padding: 7px 7px;
+}
+.object-info label,.object-data label{
+    margin: 0 10px;
+}
+.ObjektData-info{
+    width: 28rem;
+        margin: 0 8px;
+        padding: 7px 7px;
+}
+.CreatObject__data{
+    padding: 12px 0 !important;
+}
