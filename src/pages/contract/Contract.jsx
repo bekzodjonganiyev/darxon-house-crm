@@ -7,6 +7,7 @@ import {
   UploadOutlined,
 } from "@ant-design/icons";
 
+
 import "./Contract.css";
 
 const Contract = () => {

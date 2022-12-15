@@ -36,7 +36,7 @@ const Object = () => {
               key={i._id}
               defaultTitle={"Manzili"}
               objectName={i.Nomi}
-              title={"manzil qushilmagan(back)"}
+              title={i.manzili}
             />
           ))}
       </Space>

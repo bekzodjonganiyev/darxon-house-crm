@@ -1,0 +1,14 @@
+p{
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+}
+
+input{
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 2px;
+    outline: none;
+    width: 250px;
+}
+
