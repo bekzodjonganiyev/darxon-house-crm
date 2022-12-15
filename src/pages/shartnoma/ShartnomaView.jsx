@@ -1,14 +1,14 @@
 import React, { useRef, useState } from "react";
 import { PatternFormat } from "react-number-format";
 import { Form, Input, Button, Checkbox, InputNumber } from "antd";
-import {jsPDF} from "jspdf";
+import { jsPDF } from "jspdf";
 
 import "../shartnoma/shartnoma.css";
 import Test2 from "../../components/Test2";
 
 const ShartnomaView = () => {
   const ref = useRef(null);
-  const [isVisible, setIsVisible] = useState(false)
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleGeneratePdf = () => {
     const doc = new jsPDF({
@@ -54,8 +54,6 @@ const ShartnomaView = () => {
   //     //pdf.addImage(img, 'PNG', 0, 0)
   //     pdf.save("export.pdf");
   //   });
-
-  
 
   const onFinish = (values) => {
     console.log("Success:", values);
@@ -277,17 +275,17 @@ const ShartnomaView = () => {
               Kiritilgan ma'lumotlar haqiqiyligini tasdiqlayman
             </Checkbox>
             <br />
-            <Form.Item style={{display: "flex"}}>
-              {/* <Button
+            <Form.Item style={{ display: "flex" }}>
+              <Button
                 className="typeObject__btn"
                 type="primary"
                 htmlType="submit"
               >
                 Yuborish
-              </Button> */}
+              </Button>
 
               <Button
-              onClick={() => setIsVisible(!isVisible)}
+                onClick={() => setIsVisible(!isVisible)}
                 className="typeObject__btn"
                 type="primary"
               >
@@ -299,25 +297,32 @@ const ShartnomaView = () => {
       </div>
 
       {isVisible && (
-        <div style={{
-          position: "absolute",
-          top:"0px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          height :"400px",
-          width:"800px",
-          overflowY: "scroll",
-          background: "white",
-          fontSize:"15px"
-
-        }}>
-          <div ref={ref} id="toPdf" style={{
-            marginRight:"30px",
-            padding:"2rem",
-            "page-break-after": "always",
-            textAlign: "center",
-          }}>
-            <Test2/>
+        <div 
+          className="pdf-wrapper"
+          style={{
+            position: "absolute",
+            top: "0px",
+            left: "50%",
+            transform: "translateX(-50%)",
+            height: "400px",
+            width: "800px",
+            overflowY: "scroll",
+            background: "white",
+            fontSize: "15px",
+          }}
+        >
+          <div
+            className="pdf-inner"
+            ref={ref}
+            id="toPdf"
+            style={{
+              marginRight: "30px",
+              padding:"2rem",
+              "page-break-after": "always",
+              textAlign: "center",
+            }}
+          >
+            <Test2 />
           </div>
           <br />
           <Button onClick={handleGeneratePdf}>Yukalsh</Button>

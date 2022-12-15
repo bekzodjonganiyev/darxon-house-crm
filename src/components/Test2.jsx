@@ -1,38 +1,48 @@
 import React from "react";
 
 import "./Test2.css";
-const Test2 = () => {
-
+const Test2 = ({
+  investorAddress,
+  investorName,
+  passportDate,
+  passportSerial,
+  houseeNumber,
+  homeLayer,
+  homeArea,
+  homeNumber,
+  totalPrice,
+  flatNumber
+}) => {
   const styles = {
     page: {
       marginRight: "5rem",
       textAlign: "center",
-      fontSize:"10px"
+      fontSize: "10px",
     },
 
     columnLayout: {
       display: "flex",
       justifyContent: "space-between",
       margin: "3rem 0 5rem 0",
-      gap: "2rem"
+      gap: "2rem",
     },
 
     column: {
       display: "flex",
-      flexDirection: "column"
+      flexDirection: "column",
     },
 
     spacer2: {
-      height: "2rem"
+      height: "2rem",
     },
 
     fullWidth: {
-      width: "100%"
+      width: "100%",
     },
 
     marginb0: {
-      marginBottom: 0
-    }
+      marginBottom: 0,
+    },
   };
 
   return (
@@ -54,9 +64,12 @@ const Test2 = () => {
       <br />
       <br />
       <p>
-        Pasport seriyasi <b>AA6432505 Jizzax viloyati Do'stlik tumani</b> IIB
-        tomonidan <b>04.08.2014</b> sanada berilgan O'zbekiston Respublikasi
-        fuqarosi <b>Julbekov Toirbek Yuldashevich</b>(keyingi o'rinlarda –
+        Pasport seriyasi{" "}
+        <b>
+          {passportSerial} {investorAddress}
+        </b>{" "}
+        IIB tomonidan <b>{passportDate}</b> sanada berilgan O'zbekiston
+        Respublikasi fuqarosi <b>{investorName}</b>(keyingi o'rinlarda –
         “Investor”) bir tomondan, «New Times Buildings» MChJ nomidan ustav
         asosida faoliyat yurituvchi direktor D.R.Malikov (keyingi o'rinlarda –
         “Uy-joy quruvchi”) ikkinchi tomondan hamda “O'zshahar qurilish invest”
@@ -73,36 +86,37 @@ const Test2 = () => {
       <p>
         1.2. Ushbu shartnoma matnining keyingi o'rinlarida uchraydigan barcha
         atamalar, agar kontekstdan boshqacha ma'no anglanmasa, quyidagi bo'limda
-        bayon qilingan tushunchalarni anglatadi: <br /> <b>“Uy-joy majmuasi”</b> –
-        Qonun hujjatlarida belgilangan tartibda zamonaviy qurilish materiallari
-        va texnologiyalarini respublika mintaqalarining tabiiy-iqlim
-        sharoitlarini va joyning relefini, ijtimoiy-demografik xususiyatlarini
-        hisobga olgan holda ishlab chiqilgan loyiha-smeta hujjatlariga asosan
-        ma'lum bir hududda, barcha qurilish me'yorlariga mos ravishda,
-        foydalanishga tayyor holatda, atrofida obodonlashtirish va muhandislik-
-        kommunikasiya tarmoqlari bilan birgalikda qurilgan ikki yoki undan ortiq
-        ko'p qavatli uy-joylar majmuasi; <br /> <b>“Investor”</b> - “Uy-joy
-        majmuasi”dagi ko'p qavatli uy-joylardan mazkur shartnomaga asosan unga
-        ajratilgan xonadonni “Uy-joy quruvchi” tomonidan keyinchalik unga mulk
-        huquqi asosida topshirilishi sharti bilan “Uy-joy majmuasi” qurilishiga
-        ma'lum miqdordagi pul mablag'i ko'rinishida investisiya kirituvchi
-        jismoniiy shaxs; <br /> <b>“Uy-joy quruvchi”</b> - “Uy-joy majmuasi” qurilishi
-        uchun barcha zarur hujjatlar, xususan loyiha-smeta hujjatlarini
-        rasmiylashtirish, pudratchilarni tanlash, qurilish ishlarining o'z
-        vaqtida va sifatli bajarilishi yuzasidan texnik nazoratni amalga
-        oshirish, “Uy-joy majmuasi”ni o'z muddatida foydalanishga topshirish,
-        shuningdek “Investor” mablag'laridan maqsadli va samarali foydalanilishi
-        funksiyalari yuklangan holda, “New Times Buildings” MChJ; <br /> <b>“Texnik
-        buyurtmachi”</b> - “Uy-joy quruvchi” bilan rasmiylashtirilgan ikki tomonlama
-        shartnomaga muvofiq, “Uy-joy majmuasi” bo'yicha tegishli
+        bayon qilingan tushunchalarni anglatadi: <br /> <b>“Uy-joy majmuasi”</b>{" "}
+        – Qonun hujjatlarida belgilangan tartibda zamonaviy qurilish
+        materiallari va texnologiyalarini respublika mintaqalarining
+        tabiiy-iqlim sharoitlarini va joyning relefini, ijtimoiy-demografik
+        xususiyatlarini hisobga olgan holda ishlab chiqilgan loyiha-smeta
+        hujjatlariga asosan ma'lum bir hududda, barcha qurilish me'yorlariga mos
+        ravishda, foydalanishga tayyor holatda, atrofida obodonlashtirish va
+        muhandislik- kommunikasiya tarmoqlari bilan birgalikda qurilgan ikki
+        yoki undan ortiq ko'p qavatli uy-joylar majmuasi; <br />{" "}
+        <b>“Investor”</b> - “Uy-joy majmuasi”dagi ko'p qavatli uy-joylardan
+        mazkur shartnomaga asosan unga ajratilgan xonadonni “Uy-joy quruvchi”
+        tomonidan keyinchalik unga mulk huquqi asosida topshirilishi sharti
+        bilan “Uy-joy majmuasi” qurilishiga ma'lum miqdordagi pul mablag'i
+        ko'rinishida investisiya kirituvchi jismoniiy shaxs; <br />{" "}
+        <b>“Uy-joy quruvchi”</b> - “Uy-joy majmuasi” qurilishi uchun barcha
+        zarur hujjatlar, xususan loyiha-smeta hujjatlarini rasmiylashtirish,
+        pudratchilarni tanlash, qurilish ishlarining o'z vaqtida va sifatli
+        bajarilishi yuzasidan texnik nazoratni amalga oshirish, “Uy-joy
+        majmuasi”ni o'z muddatida foydalanishga topshirish, shuningdek
+        “Investor” mablag'laridan maqsadli va samarali foydalanilishi
+        funksiyalari yuklangan holda, “New Times Buildings” MChJ; <br />{" "}
+        <b>“Texnik buyurtmachi”</b> - “Uy-joy quruvchi” bilan rasmiylashtirilgan
+        ikki tomonlama shartnomaga muvofiq, “Uy-joy majmuasi” bo'yicha tegishli
         loyihalashtirish ishlarini amalga oshiruvchi, qurilish ishlari ustidan
         doimiy texnik nazoratni olib boruvchi, shuningdek, kvartiralarni
         talabgorlarga sotilishi yuzasidan tegishli xizmatlarni ko'rsatuvchi
         “O'zshahar qurilish invest” injiniring kompaniyasi MChJ; <br />
-        <b>“Kvartira”</b> – “Uy-joy majmuasi” qurilishi yakunlanib, foydalanishga
-        topshirilgandan so'ng o'ziga yuklatilgan barcha majburiyatlarni o'z
-        muddatida va to'liq bajargan “Investor”ga mulk huquqi asosida
-        topshiriladigan ko'chmas mulk ob'ekti; <br />
+        <b>“Kvartira”</b> – “Uy-joy majmuasi” qurilishi yakunlanib,
+        foydalanishga topshirilgandan so'ng o'ziga yuklatilgan barcha
+        majburiyatlarni o'z muddatida va to'liq bajargan “Investor”ga mulk
+        huquqi asosida topshiriladigan ko'chmas mulk ob'ekti; <br />
       </p>
 
       <br />
@@ -123,13 +137,14 @@ const Test2 = () => {
         MFY, Navro'z ko'chasida qurilayotgan “Uy-joy majmuasi”dagi (keyingi
         o'rinlarda “Uy-joy majmuasi”) ko'p qavatli uy-joylardan unga ajratilgan
         xonadonni “Uy-joy quruvchi” tomonidan keyinchalik mulk huquqi asosida
-        topshirilishi sharti bilan “Uy-joy majmuasi” qurilishiga maʻlum
+        topshirilishi sharti bilan “Uy-joy majmuasi” qurilishiga ma'lum
         miqdordagi pul mablag'i ko'rinishida investisiya kiritadi. <br /> 3.3.
         “Uy-joy quruvchi” “Investor”ning “Uy-joy majmuasi” qurilishi uchun
-        investisiya kiritishiga rozilik berib, “Uy-joy majmuasi”dagi <b>3</b>{" "}
-        -sonli ko'p qavatli uyning, <b>6</b> -qavat, maydoni (shartli ravishda){" "}
-        <b>69,6</b> m2 dan iborat, <b>3</b> xonali
-        <b>40</b> -kvartirasini (keyingi o'rinlarda “Kvartira”) kiritilgan
+        investisiya kiritishiga rozilik berib, “Uy-joy majmuasi”dagi{" "}
+        <b>{houseeNumber}</b> -sonli ko'p qavatli uyning, <b>{homeLayer}</b>{" "}
+        -qavat, maydoni (shartli ravishda) <b>{homeArea}</b> m2 dan iborat,{" "}
+        <b>{homeNumber}</b> xonali 
+        <b>{flatNumber}</b> -kvartirasini (keyingi o'rinlarda “Kvartira”) kiritilgan
         investisiya mablag'i evaziga unga ajratib, “Uy-joy majmuasi” belgilangan
         tartibda foydalanishga topshirilgandan so'ng notarial shartnoma tuzish
         orqali mulk huquqi asosida unga topshiradi. <br /> 3.4. Kvartira maydoni
@@ -219,7 +234,7 @@ const Test2 = () => {
         kiritilishini tashkil etadi.
         <br />
         4.3.8. Ob'ektda mehnat muhofazasi va texnika xavfsizligi qoidalariga
-        rioya etilishini taʻminlash.
+        rioya etilishini ta'minlash.
         <br />
         4.3.9. O'zbekiston Respublikasi Prenzidentining 2021 yil 19 iyundagi
         “Ko'p kvartirali uy-joylarni boshqarish tizimini yanada
@@ -282,8 +297,8 @@ const Test2 = () => {
         5.1. “Investor” tomonidan pul ko'rinishida kiritiladigan jami
         investisiya mablag'i miqdori unga ajratilgan va keyinchalik mulk huquqi
         asosida topshiriladigan kvartira qiymatiga mos ravishda{" "}
-        <b>480 240 000 (to'rt yuz sakson million ikki yuz qirq ming)</b> so'mni
-        tashkil qiladi (kvartira qiymati QQS bilan). <br />
+        <b>{totalPrice}</b> so'mni tashkil qiladi (kvartira qiymati QQS bilan).{" "}
+        <br />
         5.2. Investisiya kiritish (to'lovni amalga oshirish) turlari
         quyidagicha:
         <br />
@@ -306,26 +321,26 @@ const Test2 = () => {
         <br />
         5.5. “Investor” tomonidan shartnomaning 5.2. b) bandidagi to'lov turi
         tanlanganda Dastlabki investisiya mablag'i jami investisiya mablag'ining
-        26 foizi, <b>124 862 400</b> so'mni tashkil qilib, mazkur shartnoma
-        imzolangandan so'ng “Investor” tomonidan 10 (o'n) kun ichida hamda{" "}
-        <b>355 377 600</b> so'm investisiya qoldiq mablag'i mazkur shartnomaning
-        ajralmas qismi hisoblangan 1-ilovasida belgilangan grafik asosida malga
-        oshiriladi.
+        26 foizi, <b>{totalPrice * 0.26}</b> so'mni tashkil qilib, mazkur
+        shartnoma imzolangandan so'ng “Investor” tomonidan 10 (o'n) kun ichida
+        hamda <b>{totalPrice - totalPrice * 0.26}</b> so'm investisiya qoldiq
+        mablag'i mazkur shartnomaning ajralmas qismi hisoblangan 1-ilovasida
+        belgilangan grafik asosida malga oshiriladi.
         <br />
         5.6. “Investor” tomonidan shartnomaning 5.2. v) bandidagi to'lov turi
         tanlanganda Dastlabki investisiya mablag'i jami investisiya mablag'ining
-        26 foizi, <b>124 862 400</b> so'mni tashkil qilib, mazkur shartnoma
-        imzolangandan so'ng “Investor” tomonidan 10 (o'n) kun ichida hamda{" "}
-        <b>355 377 600</b> so'm qoldiq investisiya mablag'i ko'p qavatli
-        uy-joylarning kadastr hujjatlari tayyorlangandan so'ng yoki qurilish
-        davrida uy-joy majmuasi qurilishi investor tomonidan ulush kiritish
-        asosida ajratilgan kredit mablag'lari hisobidan amalga oshirilishi
-        yuzasidan og'zaki xabardor (telefon, telegram va boshqa aloqa vositalari
-        orqali) qilinganidan so'ng, 1 oy muddat ichida o'z mablag'lari yoki
-        bankning ipoteka krediti mablag'lari hisobidan to'lov amalga oshiriladi.
-        Agar bank ipoteka krediti ajratish sharti sifatida “Investor”dan
-        boshlang'ich to'lov shakllantirishni talab qilgan taqdirda “Uy-joy
-        quruvchi” “Investor” tomonidan to'langan dastlabki investisiya
+        26 foizi, <b>{totalPrice * 0.26}</b> so'mni tashkil qilib, mazkur
+        shartnoma imzolangandan so'ng “Investor” tomonidan 10 (o'n) kun ichida
+        hamda <b>{totalPrice - totalPrice * 0.26}</b> so'm qoldiq investisiya
+        mablag'i ko'p qavatli uy-joylarning kadastr hujjatlari tayyorlangandan
+        so'ng yoki qurilish davrida uy-joy majmuasi qurilishi investor tomonidan
+        ulush kiritish asosida ajratilgan kredit mablag'lari hisobidan amalga
+        oshirilishi yuzasidan og'zaki xabardor (telefon, telegram va boshqa
+        aloqa vositalari orqali) qilinganidan so'ng, 1 oy muddat ichida o'z
+        mablag'lari yoki bankning ipoteka krediti mablag'lari hisobidan to'lov
+        amalga oshiriladi. Agar bank ipoteka krediti ajratish sharti sifatida
+        “Investor”dan boshlang'ich to'lov shakllantirishni talab qilgan taqdirda
+        “Uy-joy quruvchi” “Investor” tomonidan to'langan dastlabki investisiya
         mablag'ini uning bankda ochilgan omonat hisob-raqamiga o'tkazib beradi.
         Bunda “Uy-joy quruvchi” bankda ipoteka krediti rasmiylashtirilishini
         tashkil etish majburiyatini o'z zimmasiga olmaydi. <br />
@@ -493,7 +508,13 @@ const Test2 = () => {
 
       <br />
 
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          flexWrap: "wrap",
+        }}
+      >
         <form
           style={{
             display: "flex",
@@ -502,11 +523,11 @@ const Test2 = () => {
         >
           <h3>“Investor”</h3>
           <label htmlFor="ism">
-            <input type="text" id="ism" />
+            <input type="text" id="ism" value={investorName} />
           </label>{" "}
           <sub>(F.I.O)</sub>
           <label htmlFor="Xaridormanzili">
-            <input type="text" id="Xaridormanzili" />
+            <input type="text" id="Xaridormanzili" value={investorAddress} />
           </label>{" "}
           <sub>(Manzil)</sub>
           <label htmlFor="tel">
@@ -550,13 +571,10 @@ const Test2 = () => {
           </label>
           <sub>(Direktor)</sub>
         </form>
-        
-      </div>
-      <form
+        <form
           style={{
             display: "flex",
             flexDirection: "column",
-            marginLeft:"-450px",
             marginTop:"50px"
           }}
         >
@@ -582,6 +600,7 @@ const Test2 = () => {
           </label>
           <sub>(Bo'lim boshlig'i)</sub>
         </form>
+      </div>
     </div>
   );
 };
