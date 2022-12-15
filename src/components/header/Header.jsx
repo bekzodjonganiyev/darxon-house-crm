@@ -1,14 +1,11 @@
 import React from "react";
+import { Button } from "antd";
 
 import "./Header.css";
 const Header = () => {
   return (
-  <header>
-    <ul>
-        <li>section1</li>
-        <li>section2</li>
-        <li>section3</li>
-    </ul>
+  <header >
+    <Button type="primary" style={{float: "right"}}>Chiqish</Button>
   </header>
   );
 };

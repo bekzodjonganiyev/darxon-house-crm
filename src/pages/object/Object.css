@@ -21,39 +21,38 @@ h1 {
   flex-wrap: wrap;
   overflow-y: scroll;
 }
-.obyekt__info{
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    color: blue;
+.obyekt__info {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  color: blue;
 }
 .obyekt__btn {
   margin: 20px 5px;
 }
 .obektName {
-    margin: 30px ;
+  margin: 30px;
 }
-.obektName Input{
-
-    padding: 5px;
-    width: 60vw;
+.obektName Input {
+  padding: 5px;
+  width: 60vw;
 }
-.creatObject__info{
-    margin: 8rem auto;
-    width: 80vw;
-    padding: 10px;
-    display: flex;
-   justify-content: center;
+.creatObject__info {
+  margin: 8rem auto;
+  width: 80vw;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
-.CreatObject__data{
-    display: flex;
-     padding: 9px;
-     margin: 3px;
-        justify-content: center;
+.CreatObject__data {
+  display: flex;
+  padding: 9px;
+  margin: 3px;
+  justify-content: center;
 }
-.ssc span label{
-        margin: 0 10px;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
+.ssc span label {
+  margin: 0 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
 }

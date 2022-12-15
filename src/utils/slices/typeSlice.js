@@ -8,6 +8,7 @@ export const getType = createAsyncThunk("type/getType", async () => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 });
 
@@ -26,6 +27,7 @@ export const addType = createAsyncThunk("type/addType", async (body) => {
     return response;
   } catch (error) {
     console.log(error);
+    throw error;
   }
 });
 
@@ -90,7 +92,7 @@ const typeSlice = createSlice({
     [addType.fulfilled]: (state, action) => {
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
-        state.types.push(action.payload.data)
+        state.types.push(action.payload.data);
       }
     },
 
@@ -106,9 +108,8 @@ const typeSlice = createSlice({
           if (i._id === action.payload?.data?.data?._id) {
             return action.payload?.data?.data;
           }
-          return state.types
+          return state.types;
         });
-
       }
     },
 
@@ -120,7 +121,7 @@ const typeSlice = createSlice({
     [deleteType.fulfilled]: (state, action) => {
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
-        state.types = state.types.filter(i => i._id !== action.data.data._id);
+        state.types = state.types.filter((i) => i._id !== action.data.data._id);
       }
     },
   },

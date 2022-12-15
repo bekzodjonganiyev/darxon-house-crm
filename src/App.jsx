@@ -7,9 +7,9 @@ import Contract from "./pages/contract/Contract";
 import Object from "./pages/object/Object";
 import SingleObject from "./pages/object/single_object/SingleObject";
 import Type from "./pages/type/Type";
+import AddType from "./pages/type/add_type/AddType";
 import ShartnomaView from "./pages/shartnoma/ShartnomaView";
 import CreateObject from "./pages/object/CreateObject";
-import TypeObekt from "./pages/type/TypeObekt";
 import DomObject from "./pages/dom/DomObject";
 
 function App() {
@@ -19,10 +19,10 @@ function App() {
         <Route index element={<Object />} />
         <Route path="/object/:id" element={<SingleObject />} />
         <Route path="/type" element={<Type />} />
+        <Route path="type-object" element={<AddType/>}/>
         <Route path="/contract" element={<Contract />} />
         <Route path="/shartnoma-view" element={<ShartnomaView />} />
         <Route path="/create-object" element={<CreateObject />} />
-        <Route path="/type-object" element={<TypeObekt />} />
         <Route path="/object-dom" element={<DomObject />} />
       </Route>
     </Routes>

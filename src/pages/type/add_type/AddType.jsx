@@ -1,11 +1,43 @@
-import React from "react";
-import {CloudUploadOutlined } from "@ant-design/icons";
-import '../type/Type.css'
-import {Row, Form, Input, Button, Upload, InputNumber } from "antd";
-const TypeObekt = () => {
-    const onFinish = (e) => {
-      console.log(e);
-    };
+import React, { useEffect, useRef } from "react";
+import { Row, Form, Input, Button, InputNumber, Select } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+
+import "../Type.css";
+
+import { addType, getType } from "../../../utils/slices/typeSlice";
+import { getObject } from "../../../utils/slices/objectSlice";
+
+const AddType = () => {
+  const dispatch = useDispatch();
+  const { objects } = useSelector((state) => state.objectSlice);
+  const ref = useRef();
+  const formData = new FormData();
+
+  const onFinish = (e) => {
+    formData.append("name", e.name);
+    formData.append("padez_soni", e.padez);
+    formData.append("qavat_soni", e.qavat);
+    formData.append("bir_padez_xona", e.xona);
+    formData.append("object", e.domType);
+    for (let i = 0; i<ref.current.files.length; i++) {
+      formData.append("photo", ref.current.files[i]);
+    }
+    dispatch(addType(formData));
+    alert("Qo'shildi");
+    window.location.href = "/";
+  };
+
+  useEffect(() => {
+    dispatch(getObject());
+    // eslint-disable-next-line
+  }, []);
+
+  console.log(objects)
+
+  const selectDom = objects.map((i) => ({
+    value: i._id,
+    label: i.Nomi,
+  }));
   return (
     <div>
       <div className="typeObject__info">
@@ -14,7 +46,6 @@ const TypeObekt = () => {
           <Form
             onSubmit
             name="basic"
-            // ref={useRef}
             autoComplete="off"
             initialValues={{
               remember: true,
@@ -62,7 +93,7 @@ const TypeObekt = () => {
                 </Form.Item>
 
                 <Form.Item
-                  label="Xona soni"
+                  label="Xonalar soni"
                   name="xona"
                   rules={[
                     {
@@ -77,39 +108,38 @@ const TypeObekt = () => {
             </div>
 
             <Form.Item
-              name="photo"
-              label="Upload"
               rules={[
                 {
                   required: true,
                   message: "rasm yuklamadi",
                 },
               ]}
-              valuePropName="fileList"
               required
             >
-              <Upload
-              name="photo"
-                action="/upload.do"
-                listType="picture-card"
-                accept=".png,.jpg"
-                beforeUpload={(file) => {
-                  return false;
-                }}
+              <input type="file" multiple ref={ref} />
+            </Form.Item>
+            <div className="ssc">
+              <span>
+                <label htmlFor="Ism">Dom tipini tanlang</label>
+              </span>
+              <Form.Item
+                className="domType"
+                name="domType"
+                required
                 rules={[
                   {
                     required: true,
-                    message: "Username is required",
+                    message: "Dom tipi",
                   },
                 ]}
               >
-                <div>
-                  <CloudUploadOutlined />
-
-                  <div className="">Rasm yuklash</div>
-                </div>
-              </Upload>
-            </Form.Item>
+                <Select
+                  options={selectDom}
+                  placeholder="uyni tanlang"
+                  required
+                />
+              </Form.Item>
+            </div>
             <Form.Item>
               <Button
                 className="typeObject__btn"
@@ -126,4 +156,4 @@ const TypeObekt = () => {
   );
 };
 
-export default TypeObekt;
+export default AddType;

@@ -1,12 +1,32 @@
-import React from 'react'
-import { Form, Input, DatePicker,Button } from "antd";
-import '../object/Object.css'
-const { RangePicker } = DatePicker;
+import { useRef } from "react";
+import { Form, Input, DatePicker, Button } from "antd";
+import { useDispatch } from "react-redux";
+
+import "../object/Object.css";
+
+import { addObject } from "../../utils/slices/objectSlice";
+
 const CreateObject = () => {
-    const onFinish = (e) => {
-      console.log(e.ObektInfo);
-    };
-    
+  const { RangePicker } = DatePicker;
+  const dispatch = useDispatch();
+  const inputRef = useRef()
+  const formData = new FormData();
+
+  const onFinish = (e) => {
+    formData.append("Nomi", e.ObektInfo);
+    formData.append("manzili", e.ObyektManzili);
+    formData.append("QurilishniBoshlanishSanasi", e.ObektData[0].format("YYYY-MM-DD"));
+    formData.append("QurilishniBitishSanasi", e.ObektData[1].format("YYYY-MM-DD"));
+    for(let i = 0; i<inputRef.current.files.length;  i++){
+      formData.append("photo", inputRef.current?.files[i]);
+    }
+    dispatch(
+      addObject(formData)
+    );
+    alert("Qo'shildi")
+    window.location.href = "/"
+  };
+
   return (
     <div>
       <div className="creatObject__info">
@@ -67,13 +87,26 @@ const CreateObject = () => {
                 <Form.Item
                   name="ObektData"
                   className="ObektInfo"
-                  
                   required
                   rows={10}
                 >
                   <RangePicker className="CreatObject__data" />
                 </Form.Item>
               </div>
+              <div className="ssc">
+                <span>
+                  <label htmlFor="Ism">Obyekt rasmimi yuklang</label>
+                </span>
+
+                <Form.Item
+                  name="photo"
+                  className="ObektInfo"
+                  required
+                >
+                  <input ref={inputRef} type="file" multiple name="photo" id="" />
+                </Form.Item>
+              </div>
+
               <Form.Item>
                 <Button type="primary" htmlType="submit">
                   Yuborish
@@ -85,6 +118,6 @@ const CreateObject = () => {
       </div>
     </div>
   );
-}
+};
 
-export default CreateObject
+export default CreateObject;

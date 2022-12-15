@@ -22,8 +22,6 @@ const Object = () => {
     // eslint-disable-next-line
   }, []) 
 
-  console.log(loadingStatus);
-
   if (loadingStatus === "loading") {
     content = <h1>Loading...</h1>;
   } else {
@@ -32,11 +30,12 @@ const Object = () => {
         {objects &&
           objects.map((i) => (
             <ObjectCard
-              to={i.Nomi}
+              to={i._id}
               key={i._id}
               defaultTitle={"Manzili"}
-              objectName={i.Nomi}
-              title={i.manzili}
+              objectName={i.manzili}
+              title={i.Nomi}
+              isType={false}
             />
           ))}
       </Space>

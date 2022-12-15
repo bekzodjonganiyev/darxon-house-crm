@@ -92,7 +92,7 @@ const objectSlice = createSlice({
     [addObject.fulfilled]: (state, action) => {
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
-        state.objects.push(action.payload.data.data);
+        state.objects.push(action.payload.data);
       }
     },
 

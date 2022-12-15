@@ -1,43 +1,81 @@
-import React from 'react'
-import { Form, Input, Select } from "antd";
+import React, { useEffect } from "react";
+import { Button, Form, Input, Select } from "antd";
+import { useDispatch, useSelector } from "react-redux";
+
+import { getType } from "../../utils/slices/typeSlice";
+import { addHouse } from "../../utils/slices/houseSlice";
+
 const DomObject = () => {
-    const selectDom = [
-      { value: "1", label: "1-4 qavat" },
-      { value: "2", label: "2-9 qavat" },
-      { value: "3", label: "2-12 qavat" },
-    ];
+  const dispatch = useDispatch();
+  const { types } = useSelector((state) => state.typeSlice);
+
+  useEffect(() => {
+    dispatch(getType());
+    // eslint-disable-next-line
+  }, []);
+
+  const selectDom = types.map((i) => ({
+    value: i._id,
+    label: i.name,
+  }));
+
+  const onFinish = (e) => {
+    console.log(e);
+    dispatch(addHouse(e));
+  };
+
   return (
-    <div>
-      <div className="container">
-        <div className="row">
-          <Form onSubmit>
-            <span className="form-label__text">Nomi</span>
-            <br />
-            <Input
-              name="name"
-              placeholder="Nomi"
-              className="form-control p-2"
-              required
-            />
-            <br />
-            <div className="col-md-6">
-              <span>uyni tanlang</span>
-              <br />
-              <Select
-                options={selectDom}
-                placeholder="uyni tanlang"
-               
-                required
-              />
-            </div>
-            <button className="btn btn-primary obyekt__btn" type="submit">
-              Yuborish
-            </button>
-          </Form>
+    <div className="row">
+      <h2 className="obyekt__info">Dom qo'shish</h2> <hr />
+      <Form onFinish={onFinish}>
+        <div className="ssc">
+          <span>
+            <label htmlFor="Ism">Dom tartib raqami</label>
+          </span>
+          <Form.Item
+            className="domName"
+            name="domName"
+            required
+            rules={[
+              {
+                required: true,
+                message: "Dom tartib raqami",
+              },
+            ]}
+          >
+            <Input className="CreatObject__data" />
+          </Form.Item>
         </div>
-      </div>
+        <div className="ssc">
+          <span>
+            <label htmlFor="Ism">Dom tipini tanlang</label>
+          </span>
+          <Form.Item
+            className="domType"
+            name="domType"
+            required
+            rules={[
+              {
+                required: true,
+                message: "Dom tipi",
+              },
+            ]}
+          >
+            <Select options={selectDom} placeholder="uyni tanlang" required />
+          </Form.Item>
+        </div>
+        <Form.Item>
+          <Button
+            className="btn btn-primary obyekt__btn"
+            htmlType="submit"
+            type="primary"
+          >
+            Yuborish
+          </Button>
+        </Form.Item>
+      </Form>
     </div>
   );
-}
+};
 
-export default DomObject
+export default DomObject;

@@ -11,6 +11,8 @@ const typeAPI = {
 
     addType(body) {
         return http.post(`/tip`, body)
+        // // console.log(body)
+        // return body
     },
 
     editType(body, id) {
@@ -45,23 +47,23 @@ const objectAPI = {
 }
 
 const houseAPI = {
-    getObject() {
+    getHouse() {
         return http.get(`/dom`)
     },
 
-    getObjectById(id) {
+    getHouseById(id) {
         return http.get(`/dom/${id}`)
     },
 
-    addObject(body) {
+    addHouse(body) {
         return http.post(`/dom`, body)
     },
 
-    editObject(body, id) {
+    editHouse(body, id) {
         return http.put(`/dom/${id}`, body)
     },
 
-    deleteObject(id) {
+    deleteHouse(id) {
         return http.delete(`/dom/${id}`)
     }
 }
