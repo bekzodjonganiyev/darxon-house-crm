@@ -4,8 +4,12 @@ import "./Test2.css";
 const Test2 = ({
   investorAddress,
   investorName,
+  investorSurname,
+  investorFather,
+  investorPhone,
   passportDate,
   passportSerial,
+  jshshr,
   houseeNumber,
   homeLayer,
   homeArea,
@@ -69,7 +73,7 @@ const Test2 = ({
           {passportSerial} {investorAddress}
         </b>{" "}
         IIB tomonidan <b>{passportDate}</b> sanada berilgan O'zbekiston
-        Respublikasi fuqarosi <b>{investorName}</b>(keyingi o'rinlarda –
+        Respublikasi fuqarosi <b>{investorName} {investorSurname} {investorFather}</b>(keyingi o'rinlarda –
         “Investor”) bir tomondan, «New Times Buildings» MChJ nomidan ustav
         asosida faoliyat yurituvchi direktor D.R.Malikov (keyingi o'rinlarda –
         “Uy-joy quruvchi”) ikkinchi tomondan hamda “O'zshahar qurilish invest”
@@ -523,15 +527,15 @@ const Test2 = ({
         >
           <h3>“Investor”</h3>
           <label htmlFor="ism">
-            <input type="text" id="ism" value={investorName} />
+            <input type="text" id="ism" readOnly defaultValue={investorName} />
           </label>{" "}
           <sub>(F.I.O)</sub>
           <label htmlFor="Xaridormanzili">
-            <input type="text" id="Xaridormanzili" value={investorAddress} />
+            <input type="text" id="Xaridormanzili" readOnly defaultValue={investorAddress} />
           </label>{" "}
           <sub>(Manzil)</sub>
           <label htmlFor="tel">
-            <input type="text" id="tel" />
+            <input type="text" id="tel"  readOnly defaultValue={investorPhone}/>
           </label>{" "}
           <sub>(Tel)</sub>
           <label htmlFor="dob">
@@ -539,7 +543,7 @@ const Test2 = ({
           </label>
           <sub>(Tug'ilgan sanasi)</sub>
           <label htmlFor="jshshr">
-            <input type="text" id="jshshr" />
+            <input type="text" id="jshshr" readOnly defaultValue={jshshr} />
           </label>
           <sub>(JSHSHR)</sub>
         </form>
