@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { PatternFormat } from "react-number-format";
-import { Form, Input, Button, Checkbox, InputNumber } from "antd";
+import { Form, Input, Button, DatePicker, InputNumber } from "antd";
 import { jsPDF } from "jspdf";
 
 import "../shartnoma/shartnoma.css";
