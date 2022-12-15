@@ -147,7 +147,7 @@ const Test2 = ({
         investisiya kiritishiga rozilik berib, “Uy-joy majmuasi”dagi{" "}
         <b>{houseeNumber}</b> -sonli ko'p qavatli uyning, <b>{homeLayer}</b>{" "}
         -qavat, maydoni (shartli ravishda) <b>{homeArea}</b> m2 dan iborat,{" "}
-        <b>{homeNumber}</b> xonali 
+        <b>{homeNumber}</b> xonali  {"  "}
         <b>{flatNumber}</b> -kvartirasini (keyingi o'rinlarda “Kvartira”) kiritilgan
         investisiya mablag'i evaziga unga ajratib, “Uy-joy majmuasi” belgilangan
         tartibda foydalanishga topshirilgandan so'ng notarial shartnoma tuzish

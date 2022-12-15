@@ -12,10 +12,7 @@ const ShartnomaView = () => {
   const [obj, setObj] = useState({});
 
   const handleGeneratePdf = () => {
-    const doc = new jsPDF({
-      format: "a3",
-      unit: "px",
-    });
+    const doc = new jsPDF("p","px","a3", true);
 
     // Adding the fonts.
     doc.setFont("Inter-Regular", "normal");
@@ -235,6 +232,23 @@ const ShartnomaView = () => {
             </div>
             <div className="box-info">
               <span>
+                <label htmlFor="Ism">uy raqami</label>
+              </span>
+              <Form.Item
+                name="UyRaqami"
+                rules={[
+                  {
+                    required: true,
+                    message: "Uy raqami",
+                  },
+                ]}
+              >
+                <InputNumber className="object__numbers" />
+              </Form.Item>
+            </div>
+
+            <div className="box-info">
+              <span>
                 <label htmlFor="Ism">Qavat</label>
               </span>
               <Form.Item
@@ -243,22 +257,6 @@ const ShartnomaView = () => {
                   {
                     required: true,
                     message: "Bino qavati",
-                  },
-                ]}
-              >
-                <InputNumber className="object__numbers" />
-              </Form.Item>
-            </div>
-            <div className="box-info">
-              <span>
-                <label htmlFor="Ism">xona soni</label>
-              </span>
-              <Form.Item
-                name="xonaSoni"
-                rules={[
-                  {
-                    required: true,
-                    message: "xona soni ",
                   },
                 ]}
               >
@@ -283,14 +281,31 @@ const ShartnomaView = () => {
             </div>
             <div className="box-info">
               <span>
-                <label htmlFor="Ism">uy raqami</label>
+                <label htmlFor="Ism">xona soni</label>
               </span>
               <Form.Item
-                name="UyRaqami"
+                name="xonaSoni"
                 rules={[
                   {
                     required: true,
-                    message: "Uy raqami",
+                    message: "xona soni ",
+                  },
+                ]}
+              >
+                <InputNumber className="object__numbers" />
+              </Form.Item>
+            </div>
+
+            <div className="box-info">
+              <span>
+                <label htmlFor="Ism">xona raqami</label>
+              </span>
+              <Form.Item
+                name="XonaRaqami"
+                rules={[
+                  {
+                    required: true,
+                    message: "xona raqami",
                   },
                 ]}
               >
@@ -348,6 +363,7 @@ const ShartnomaView = () => {
               </Form.Item>
             </div>
           </div>
+
           <div className="checout__btn">
             <Form.Item>
               <div style={{ display: "flex" }}>
@@ -408,18 +424,18 @@ const ShartnomaView = () => {
               investorSurname={obj.FullName}
               investorFather={obj.OtasiIsmi}
               investorPhone={obj.phone}
-              passportDate={obj.passportseria}
+              passportDate={obj.pasdata.format("YYYY-MM-DD")}
               passportSerial={obj.passportseria}
               jshshr={obj.jshr}
               houseeNumber={obj.UyRaqami}
               homeLayer={obj.UyQavat}
               homeArea={obj.UyMaydoni}
-              homeNumber={obj.UyRaqami}
+              homeNumber={obj.xonaSoni}
               totalPrice={obj.UyningNarxi}
-              flatNumber={obj.UyRaqami}
+              flatNumber={"backendan kelmayapyi"}
             />
           </div>
-          <Button style={{ marginLeft: "30px" }} onClick={handleGeneratePdf}>
+          <Button style={{ marginLeft: "30px" }} onClick={handleGeneratePdf} type="primary">
             Yukalsh
           </Button>
           <br />
