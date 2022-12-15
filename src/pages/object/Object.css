@@ -47,8 +47,13 @@ h1 {
 }
 .CreatObject__data{
     display: flex;
-     padding: 5px;
+     padding: 9px;
      margin: 3px;
-     
         justify-content: center;
+}
+.ssc span label{
+        margin: 0 10px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
 }

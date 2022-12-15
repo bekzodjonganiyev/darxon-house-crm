@@ -10,6 +10,7 @@ import Type from "./pages/type/Type";
 import ShartnomaView from "./pages/shartnoma/ShartnomaView";
 import CreateObject from "./pages/object/CreateObject";
 import TypeObekt from "./pages/type/TypeObekt";
+
 import DomObject from "./pages/dom/DomObject";
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/shartnoma-view" element={<ShartnomaView />} />
         <Route path="/create-object" element={<CreateObject />} />
         <Route path="/type-object" element={<TypeObekt />} />
+        
         <Route path="/object-dom" element={<DomObject />} />
       </Route>
     </Routes>
