@@ -1,57 +1,8 @@
-import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
-import { Button, Space, Input } from "antd";
-import { useDispatch, useSelector } from "react-redux";
-import "./SingleObject.css"
-
-import ObjectCard from '../../../components/object_card/ObjectCard';
-import { getType } from '../../../utils/slices/houseSlice';
 const SingleObject = () => {
-  const { Search } = Input;
-  const { types, loadingStatus } = useSelector((state) => state.typeSlice);
-  let content = null;
-
-  const dispatch = useDispatch();
-  const onSearch = (value) => console.log(value);
-   useEffect(() => {
-     dispatch(getType());
-     // eslint-disable-next-line
-   }, []);
-
-   if (loadingStatus === "loading") {
-     content = <h1>Loading...</h1>;
-   } else {
-     content = (
-       <Space className="type-body">
-         {types &&
-           types.map((i) => (
-             <ObjectCard key={i._id} objectName={i.name} isType={true} isShartnoma={true}/>
-           ))}
-       </Space>
-     );
-   }
-
-  return (
-    <div>
-      <div className="type">
-        <Space className="type-header">
-          <Search
-            placeholder="input search text"
-            allowClear
-            enterButton
-            size="large"
-            onSearch={onSearch}
-          />
-          <Link to="/type-object">
-            <Button type="primary" size="large">
-              Tip qo'shish
-            </Button>
-          </Link>
-        </Space>
-        {content}
-      </div>
-    </div>
-  );
+  <div>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit eaque incidunt quos ea sunt vero consectetur modi, natus, earum fugit, atque exercitationem voluptates dolore velit aut fuga id eligendi voluptatem.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam modi suscipit error sit aut nisi est! Earum, laboriosam, similique corrupti tempora alias expedita ullam est nam aliquam reiciendis dolorem animi voluptatibus nesciunt ea enim amet minus saepe facere consequatur odit quae, rerum porro. Cum veniam est nobis quae totam. Est deserunt dolorum eum saepe, quia harum necessitatibus excepturi fugiat cum repellendus qui vero iusto ipsa rerum quasi ex provident non sapiente? Corrupti blanditiis totam hic! At, accusamus ea. Quibusdam, libero sint consequatur minus provident tempora eos possimus adipisci fuga nemo doloribus omnis eaque quia. Impedit nam itaque aspernatur error repellendus dolorum saepe in quas adipisci consequuntur eligendi sequi cupiditate, laudantium doloremque fugiat deserunt, quia nobis! Illo labore blanditiis aliquid repellendus libero cum suscipit cumque ullam rerum ea iusto veniam molestias totam quisquam perspiciatis debitis reprehenderit repellat eligendi non omnis culpa laudantium, voluptate laborum? Dolor deleniti fugiat quidem earum, quisquam autem praesentium molestias inventore corporis accusamus esse cupiditate ipsa saepe tempore itaque, dolore nisi blanditiis assumenda laboriosam, corrupti officia porro numquam. Optio eveniet quaerat corrupti alias, nesciunt atque laboriosam distinctio rerum dolores eaque iste nam, sunt voluptatum id ullam magnam porro nostrum obcaecati. Vitae nobis temporibus, fugiat quaerat aspernatur explicabo veniam!
+  </div>
 }
 
 export default SingleObject

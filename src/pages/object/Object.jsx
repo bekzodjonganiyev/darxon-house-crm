@@ -32,7 +32,7 @@ const Object = () => {
         {objects &&
           objects.map((i) => (
             <ObjectCard
-              to={i.Nomi}
+              to={i._id}
               key={i._id}
               defaultTitle={"Manzili"}
               objectName={i.Nomi}

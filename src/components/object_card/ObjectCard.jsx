@@ -17,20 +17,8 @@ const ObjectCard = ({ to, defaultTitle, title, objectName, isType}) => {
   const [isModalInfo, setIsModalInfo] = useState(false);
   const [isModalEdit, setIsModalEdit] = useState(false);
   const [isModalDelete, setIsModalDelete] = useState(false);
-  
-  
-  
   const handleOk = () => {
-    
-    
   };
-  const handleCancel = () => {
-    // setIsModalOpen(false);
-    //  setIsModalShow(false);
-    //   setIsModalDelete(false);
-  };
-
-  
 
   return (
     <>
@@ -145,6 +133,7 @@ const ObjectCard = ({ to, defaultTitle, title, objectName, isType}) => {
           </Form>
         )}
       </Modal>
+      
       <Modal
         title="edit"
         open={isModalEdit}
@@ -257,6 +246,7 @@ const ObjectCard = ({ to, defaultTitle, title, objectName, isType}) => {
           </>
         )}
       </Modal>
+
       <Modal
         title="Delete"
         open={isModalDelete}

@@ -1,7 +1,6 @@
 import React from 'react'
 import { Form, Input, DatePicker,Button } from "antd";
 import '../object/Object.css'
-const { RangePicker } = DatePicker;
 const CreateObject = () => {
     const onFinish = (e) => {
       console.log(e.ObektInfo);
