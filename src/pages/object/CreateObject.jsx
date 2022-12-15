@@ -29,7 +29,7 @@ const CreateObject = () => {
 
                 <Form.Item
                   className="ObektInfo"
-                  name="ObektInfo"
+                  name="Nomi"
                   required
                   rules={[
                     {
@@ -48,7 +48,7 @@ const CreateObject = () => {
 
                 <Form.Item
                   className="ObektInfo"
-                  name="ObyektManzili"
+                  name="manzili"
                   rules={[
                     {
                       required: true,
@@ -59,23 +59,34 @@ const CreateObject = () => {
                   <Input className="CreatObject__data" />
                 </Form.Item>
               </div>
-              <div className="ssc">
+              <div className="object-data">
                 <span>
-                  <label htmlFor="Ism">Boshlanish va tugash sanasi</label>
-                </span>
+                  <label htmlFor="Ism">Boshlanish sanasi</label>
 
-                <Form.Item
-                  name="ObektData"
-                  className="ObektInfo"
-                  
-                  required
-                  rows={10}
-                >
-                  <RangePicker className="CreatObject__data" />
-                </Form.Item>
+                  <Form.Item
+                    name="QurilishniBoshlanishSanasi"
+                    className=""
+                    required
+                    rows={10}
+                  >
+                    <DatePicker className="ObjektData-info" />
+                  </Form.Item>
+                </span>
+                <span>
+                  <label htmlFor="Ism">Tugash sanasi</label>
+
+                  <Form.Item
+                    name="QurilishniBitishSanasi"
+                    className=""
+                    required
+                    rows={10}
+                  >
+                    <DatePicker className="ObjektData-info" />
+                  </Form.Item>
+                </span>
               </div>
               <Form.Item>
-                <Button type="primary" htmlType="submit">
+                <Button type="primary" className='btn' htmlType="submit">
                   Yuborish
                 </Button>
               </Form.Item>

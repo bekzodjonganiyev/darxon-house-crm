@@ -37,6 +37,7 @@ const Object = () => {
               defaultTitle={"Manzili"}
               objectName={i.Nomi}
               title={i.manzili}
+              isType={"objekt"}
             />
           ))}
       </Space>

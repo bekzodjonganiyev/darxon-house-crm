@@ -32,7 +32,7 @@ const Type = () => {
             <ObjectCard
               key={i._id}
               objectName={i.name}
-              isType={true}
+              isType={"tip"}
             />
           ))}
       </Space>
