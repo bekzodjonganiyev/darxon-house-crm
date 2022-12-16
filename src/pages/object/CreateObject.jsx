@@ -28,7 +28,7 @@ const CreateObject = () => {
   };
 
   return (
-    <div>
+
       <div className="creatObject__info">
         <div className="row">
           <h2 className="obyekt__info">Obyekt qo'shish</h2> <hr />
@@ -116,7 +116,6 @@ const CreateObject = () => {
           </Form>
         </div>
       </div>
-    </div>
   );
 };
 

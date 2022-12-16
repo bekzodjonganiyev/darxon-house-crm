@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 
 import { typeAPI } from "../api";
 
@@ -76,10 +76,12 @@ const typeSlice = createSlice({
       }
     },
     [getTypeById.fulfilled]: (state, action) => {
+      const { meta } = action;
+
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
-        state.currentTypes = state.types.filter(
-          (i) => i._id === action.payload.data.data._id
+        state.currentTypes = current(state).types.filter(
+          i => i._id === meta?.arg
         );
       }
     },
@@ -105,7 +107,7 @@ const typeSlice = createSlice({
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
         state.types = state.types.map((i) => {
-          if (i._id === action.payload?.data?.data?._id) {
+          if (i._id === action.payload?.data?._id) {
             return action.payload?.data?.data;
           }
           return state.types;
@@ -119,9 +121,11 @@ const typeSlice = createSlice({
       }
     },
     [deleteType.fulfilled]: (state, action) => {
+      const { meta } = action;
+
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
-        state.types = state.types.filter((i) => i._id !== action.data.data._id);
+        state.types = current(state).types.filter(i => i._id !== meta?.arg)
       }
     },
   },

@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { Row, Form, Input, Button, InputNumber, Select } from "antd";
+import { Form, Input, Button, InputNumber, Select } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 
 import "../Type.css";
 
-import { addType, getType } from "../../../utils/slices/typeSlice";
+import { addType } from "../../../utils/slices/typeSlice";
 import { getObject } from "../../../utils/slices/objectSlice";
 
 const AddType = () => {
@@ -14,143 +14,124 @@ const AddType = () => {
   const formData = new FormData();
 
   const onFinish = (e) => {
-    formData.append("name", e.name);
+    formData.append("name", e.nomi);
     formData.append("padez_soni", e.padez);
     formData.append("qavat_soni", e.qavat);
-    formData.append("bir_padez_xona", e.xona);
-    formData.append("object", e.domType);
-    for (let i = 0; i<ref.current.files.length; i++) {
-      formData.append("photo", ref.current.files[i]);
+    formData.append("bir_padez_xona", e.padez_xona);
+    formData.append("object", e.obekt);
+    for (let i = 0; i < ref.current.input.files.length; i++) {
+      formData.append("photo", ref.current.input.files[i]);
     }
     dispatch(addType(formData));
-    alert("Qo'shildi");
-    window.location.href = "/";
+    alert("Qo`shildi")
+    window.location.href = "/type"
+    console.log(e);
   };
-
+  const onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
   useEffect(() => {
     dispatch(getObject());
     // eslint-disable-next-line
   }, []);
-
-  console.log(objects)
 
   const selectDom = objects.map((i) => ({
     value: i._id,
     label: i.Nomi,
   }));
   return (
-    <div>
-      <div className="typeObject__info">
-        <div className="row">
-          <h2 className="obyekt__info">Tip qo'shish</h2> <hr />
-          <Form
-            onSubmit
-            name="basic"
-            autoComplete="off"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
+    <div className="typeObject__info">
+      <div className="row">
+        <h2 className="obyekt__info">Tip qo'shish</h2> <hr />
+        <Form
+          name="basic"
+          labelCol={{ span: 20 }}
+          wrapperCol={{ span: 30 }}
+          initialValues={{ remember: true }}
+          onFinish={onFinish}
+          onFinishFailed={onFinishFailed}
+          autoComplete="off"
+        >
+          <Form.Item
+            name="nomi"
+            rules={[
+              {
+                required: true,
+                message: "Nomi!",
+              },
+            ]}
           >
+            <Input placeholder="Nomi" />
+          </Form.Item>
+
+          <div style={{ display: "flex", justifyContent: "space-between", gap:"100px" }}>
             <Form.Item
-              label="Nomi"
-              name="name"
+              name="qavat"
               rules={[
                 {
                   required: true,
-                  message: "Username is required",
+                  message: "Qavat!",
                 },
               ]}
             >
-              <Input className="typeObject__Info" />
+              <InputNumber placeholder="Qavat" />
             </Form.Item>
-            <div className="">
-              <Row>
-                <Form.Item
-                  label="Padez soni"
-                  name="padez"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Padez soni",
-                    },
-                  ]}
-                >
-                  <InputNumber className="object__number" />
-                </Form.Item>
-
-                <Form.Item
-                  label="Qavat soni"
-                  name="qavat"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Qavat soni",
-                    },
-                  ]}
-                >
-                  <InputNumber className="object__number" />
-                </Form.Item>
-
-                <Form.Item
-                  label="Xonalar soni"
-                  name="xona"
-                  rules={[
-                    {
-                      required: true,
-                      message: "Xona soni",
-                    },
-                  ]}
-                >
-                  <InputNumber className="object__number" />
-                </Form.Item>
-              </Row>
-            </div>
 
             <Form.Item
+              name="padez"
               rules={[
                 {
                   required: true,
-                  message: "rasm yuklamadi",
+                  message: "Padez!",
                 },
               ]}
-              required
             >
-              <input type="file" multiple ref={ref} />
+              <InputNumber placeholder="Padez" />
             </Form.Item>
-            <div className="ssc">
-              <span>
-                <label htmlFor="Ism">Dom tipini tanlang</label>
-              </span>
-              <Form.Item
-                className="domType"
-                name="domType"
-                required
-                rules={[
-                  {
-                    required: true,
-                    message: "Dom tipi",
-                  },
-                ]}
-              >
-                <Select
-                  options={selectDom}
-                  placeholder="uyni tanlang"
-                  required
-                />
-              </Form.Item>
-            </div>
-            <Form.Item>
-              <Button
-                className="typeObject__btn"
-                type="primary"
-                htmlType="submit"
-              >
-                Yuborish
-              </Button>
+
+            <Form.Item
+              name="padez_xona"
+              rules={[
+                {
+                  required: true,
+                  message: "Padezdagi xonalar soni!",
+                },
+              ]}
+            >
+              <InputNumber placeholder="Xonalar soni" />
             </Form.Item>
-          </Form>
-        </div>
+          </div>
+
+          <Form.Item
+            name="obekt"
+            rules={[
+              {
+                required: true,
+                message: "Nomi!",
+              },
+            ]}
+          >
+            <Select options={selectDom} placeholder="Obyekt" />
+          </Form.Item>
+
+          <Form.Item
+            // name="rasm"
+            rules={[
+              {
+                required: true,
+                message: "Nomi!",
+              },
+            ]}
+          >
+            <Input type="file" ref={ref} multiple/>
+          </Form.Item>
+
+          <Form.Item>
+            <Button type="primary" htmlType="submit">
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
       </div>
     </div>
   );

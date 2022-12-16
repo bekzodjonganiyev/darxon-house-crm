@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 
 import { objectAPI } from "../api";
 
@@ -120,9 +120,11 @@ const objectSlice = createSlice({
       }
     },
     [deleteObject.fulfilled]: (state, action) => {
+      const { meta } = action;
+
       if (state.loadingStatus === "loading") {
         state.loadingStatus = "default";
-        state.objects = state.objects.filter(i => i._id !== action.data.data._id);
+        state.objects = current(state).objects.filter(i => i._id !== meta?.arg);
       }
     },
   },

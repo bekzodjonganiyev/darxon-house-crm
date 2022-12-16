@@ -33,8 +33,8 @@ const Object = () => {
               to={i._id}
               key={i._id}
               defaultTitle={"Manzili"}
-              objectName={i.manzili}
-              title={i.Nomi}
+              objectName={i.Nomi}
+              title={i.manzili}
               isType={false}
             />
           ))}
